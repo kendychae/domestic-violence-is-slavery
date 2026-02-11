@@ -5,40 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Comprehensive list of domestic violence resources including Idaho local services and national hotlines.">
     <title>Resources - Domestic Violence Resources</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>❤️</text></svg>" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- UserWay Accessibility Widget -->
+    <script>
+    (function(d){
+        var s = d.createElement("script");
+        s.setAttribute("data-account", "xGkYEsQ9GU");
+        s.setAttribute("src", "https://cdn.userway.org/widget.js");
+        (d.body || d.head).appendChild(s);
+    })(document)
+    </script>
 </head>
 <body>
     <!-- Quick Exit Button -->
     <button id="quickExit" class="quick-exit-btn" aria-label="Quick exit to Google">
-        <span class="exit-icon">⚠</span> Quick Exit
+        Quick Exit
     </button>
 
-    <!-- Accessibility Widget -->
-    <div id="accessibilityWidget" class="accessibility-widget" role="complementary" aria-label="Accessibility controls">
-        <button class="widget-handle" aria-label="Drag to move accessibility widget">
-            <span class="handle-icon">♿</span>
-        </button>
-        <div class="widget-content">
-            <h3>Accessibility</h3>
-            <div class="widget-controls">
-                <button id="increaseFontBtn" aria-label="Increase font size">A+</button>
-                <button id="decreaseFontBtn" aria-label="Decrease font size">A-</button>
-                <button id="toggleContrastBtn" aria-label="Toggle high contrast">
-                    <span class="contrast-icon">◐</span> Contrast
-                </button>
-            </div>
-        </div>
-    </div>
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+        ↑
+    </button>
 
     <!-- Header/Navigation -->
     <header role="banner">
         <nav role="navigation" aria-label="Main navigation">
             <div class="nav-container">
                 <div class="logo">
-                    <a href="index.html" aria-label="Home">DV Resources</a>
+                    <a href="index.html" aria-label="Home">Domestic Violence Resources</a>
                 </div>
                 <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span></span>
@@ -53,7 +51,7 @@
                 </ul>
                 <div class="emergency-number">
                     <a href="tel:1-800-799-7233" class="emergency-link">
-                        <span class="phone-icon">📞</span> 1-800-799-7233
+                        1-800-799-7233
                     </a>
                 </div>
             </div>
@@ -364,8 +362,10 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Domestic Violence Resources. Information is educational only.</p>
+                <p class="footer-updated">Last updated: <span id="lastUpdated"></span></p>
                 <p class="footer-links">
                     <button id="quickExitFooter" class="footer-exit">Quick Exit</button>
+                    <span class="easter-egg" id="easterEgg" title="Click me!" role="button" tabindex="0" aria-label="Click for a special surprise">♡</span>
                 </p>
             </div>
         </div>
@@ -373,6 +373,5 @@
 
     <!-- Scripts -->
     <script src="script.js"></script>
-    <script src="accessibility-widget.js"></script>
 </body>
 </html>

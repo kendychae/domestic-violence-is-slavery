@@ -3,6 +3,86 @@
  * Handles navigation, quick exit, and general interactivity
  */
 
+// ========== Safety Modal ==========
+document.addEventListener('DOMContentLoaded', function() {
+    const safetyModal = document.getElementById('safetyModal');
+    const modalClose = document.getElementById('modalClose');
+    
+    if (safetyModal && modalClose) {
+        // Check if user has dismissed the modal in this session
+        const modalDismissed = sessionStorage.getItem('safetyModalDismissed');
+        
+        if (!modalDismissed) {
+            // Show modal
+            safetyModal.classList.add('active');
+        }
+        
+        // Close modal on button click
+        modalClose.addEventListener('click', function() {
+            safetyModal.classList.remove('active');
+            sessionStorage.setItem('safetyModalDismissed', 'true');
+        });
+        
+        // Close modal when clicking outside the content
+        safetyModal.addEventListener('click', function(e) {
+            if (e.target === safetyModal) {
+                safetyModal.classList.remove('active');
+                sessionStorage.setItem('safetyModalDismissed', 'true');
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && safetyModal.classList.contains('active')) {
+                safetyModal.classList.remove('active');
+                sessionStorage.setItem('safetyModalDismissed', 'true');
+            }
+        });
+    }
+});
+
+// ========== Scroll to Top Button ==========
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    if (scrollToTopBtn) {
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        // Scroll to top on click
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+});
+
+// ========== Last Updated Date ==========
+document.addEventListener('DOMContentLoaded', function() {
+    const lastUpdatedElements = document.querySelectorAll('#lastUpdated');
+    
+    if (lastUpdatedElements.length > 0) {
+        const currentDate = new Date();
+        const formattedDate = currentDate.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        
+        lastUpdatedElements.forEach(function(element) {
+            element.textContent = formattedDate;
+        });
+    }
+});
+
 // ========== Quick Exit Functionality ==========
 function quickExit() {
     // Replace current page in history with Google to hide site visit
@@ -189,15 +269,11 @@ function copyToClipboard(text) {
 }
 
 // ========== Privacy Warning on Page Load ==========
+// Note: Safety modal now handles privacy warnings on first page load
+// This function is kept for backward compatibility
 document.addEventListener('DOMContentLoaded', function() {
-    // Check if user has seen privacy warning
-    const hasSeenWarning = sessionStorage.getItem('privacyWarningAcknowledged');
-    
-    // Only show once per session (can be modified to show every visit)
-    if (!hasSeenWarning) {
-        // Mark as seen immediately
-        sessionStorage.setItem('privacyWarningAcknowledged', 'true');
-    }
+    // Privacy warning is now handled by the safety modal
+    // which displays on the home page only
 });
 
 // ========== Console Warning for Safety ==========
@@ -226,6 +302,62 @@ function logPageView() {
     // Implement privacy-respecting analytics here
     // Consider not tracking at all for safety reasons
 }
+
+// ========== Easter Egg - Animated Hearts ==========
+document.addEventListener('DOMContentLoaded', function() {
+    const easterEgg = document.getElementById('easterEgg');
+    
+    if (easterEgg) {
+        // Click handler
+        easterEgg.addEventListener('click', createHeartBurst);
+        
+        // Keyboard accessibility
+        easterEgg.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                createHeartBurst();
+            }
+        });
+    }
+    
+    function createHeartBurst() {
+        const numberOfHearts = 15; // Number of hearts to create
+        
+        for (let i = 0; i < numberOfHearts; i++) {
+            setTimeout(function() {
+                createFloatingHeart();
+            }, i * 100); // Stagger the heart creation
+        }
+    }
+    
+    function createFloatingHeart() {
+        const heart = document.createElement('div');
+        heart.className = 'floating-heart';
+        
+        // Random horizontal starting position near the easter egg
+        const easterEggRect = document.getElementById('easterEgg').getBoundingClientRect();
+        const startX = easterEggRect.left + (Math.random() - 0.5) * 100;
+        const startY = easterEggRect.top;
+        
+        heart.style.left = startX + 'px';
+        heart.style.top = startY + 'px';
+        
+        // Random animation duration for variety
+        const duration = 2.5 + Math.random() * 1.5;
+        heart.style.animationDuration = duration + 's';
+        
+        // Random horizontal drift
+        const drift = (Math.random() - 0.5) * 200;
+        heart.style.setProperty('--drift', drift + 'px');
+        
+        document.body.appendChild(heart);
+        
+        // Remove heart after animation completes
+        setTimeout(function() {
+            heart.remove();
+        }, duration * 1000);
+    }
+});
 
 // ========== Export functions for testing ==========
 if (typeof module !== 'undefined' && module.exports) {

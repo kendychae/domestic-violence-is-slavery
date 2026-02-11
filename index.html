@@ -6,40 +6,60 @@
     <meta name="description" content="Comprehensive domestic violence resource center providing support, information, and emergency assistance for survivors.">
     <meta name="keywords" content="domestic violence, domestic abuse, help, resources, support, hotline, Idaho">
     <title>Home - Domestic Violence Resources</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>❤️</text></svg>" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- UserWay Accessibility Widget -->
+    <script>
+    (function(d){
+        var s = d.createElement("script");
+        s.setAttribute("data-account", "xGkYEsQ9GU");
+        s.setAttribute("src", "https://cdn.userway.org/widget.js");
+        (d.body || d.head).appendChild(s);
+    })(document)
+    </script>
 </head>
 <body>
-    <!-- Quick Exit Button -->
-    <button id="quickExit" class="quick-exit-btn" aria-label="Quick exit to Google">
-        <span class="exit-icon">⚠</span> Quick Exit
-    </button>
-
-    <!-- Accessibility Widget -->
-    <div id="accessibilityWidget" class="accessibility-widget" role="complementary" aria-label="Accessibility controls">
-        <button class="widget-handle" aria-label="Drag to move accessibility widget">
-            <span class="handle-icon">♿</span>
-        </button>
-        <div class="widget-content">
-            <h3>Accessibility</h3>
-            <div class="widget-controls">
-                <button id="increaseFontBtn" aria-label="Increase font size">A+</button>
-                <button id="decreaseFontBtn" aria-label="Decrease font size">A-</button>
-                <button id="toggleContrastBtn" aria-label="Toggle high contrast">
-                    <span class="contrast-icon">◐</span> Contrast
-                </button>
+    <!-- Safety Alert Modal -->
+    <div id="safetyModal" class="safety-modal" role="dialog" aria-labelledby="safety-modal-title" aria-modal="true">
+        <div class="safety-modal-content">
+            <h2 id="safety-modal-title">Safety Alert</h2>
+            <div class="safety-modal-body">
+                <p><strong>Your safety is important.</strong> Please be aware of the following:</p>
+                <ul>
+                    <li>Internet browsing can be tracked by others who have access to your device.</li>
+                    <li>Your browser history may reveal that you visited this website.</li>
+                    <li>Consider using a safer computer - one that an abuser does not have access to.</li>
+                    <li>Use <strong>private/incognito mode</strong> when possible.</li>
+                    <li>Clear your browser history after visiting sensitive websites.</li>
+                    <li>Use the <strong>Quick Exit button</strong> (top right) to immediately leave this site.</li>
+                </ul>
+                <p class="safety-emergency"><strong>If you are in immediate danger, call 911 or your local emergency services.</strong></p>
+            </div>
+            <div class="safety-modal-footer">
+                <button id="dismissSafetyModal" class="btn btn-primary">I Understand - Continue to Site</button>
             </div>
         </div>
     </div>
+
+    <!-- Quick Exit Button -->
+    <button id="quickExit" class="quick-exit-btn" aria-label="Quick exit to Google">
+        Quick Exit
+    </button>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+        ↑
+    </button>
 
     <!-- Header/Navigation -->
     <header role="banner">
         <nav role="navigation" aria-label="Main navigation">
             <div class="nav-container">
                 <div class="logo">
-                    <a href="index.html" aria-label="Home">DV Resources</a>
+                    <a href="index.html" aria-label="Home">Domestic Violence Resources</a>
                 </div>
                 <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span></span>
@@ -54,7 +74,7 @@
                 </ul>
                 <div class="emergency-number">
                     <a href="tel:1-800-799-7233" class="emergency-link">
-                        <span class="phone-icon">📞</span> 1-800-799-7233
+                        1-800-799-7233
                     </a>
                 </div>
             </div>
@@ -82,14 +102,12 @@
                 
                 <div class="info-grid">
                     <div class="info-card">
-                        <div class="card-icon">📖</div>
                         <h3>What Is Domestic Violence?</h3>
                         <p>Domestic violence (also called intimate partner violence, domestic abuse, or relationship abuse) is a pattern of behaviors used by one partner to maintain power and control over another partner in an intimate relationship.</p>
                         <p>Domestic violence does not discriminate. It affects people of all ages, economic backgrounds, education levels, races, religions, genders, and sexual orientations.</p>
                     </div>
 
                     <div class="info-card">
-                        <div class="card-icon">⚠️</div>
                         <h3>Forms of Abuse</h3>
                         <ul class="abuse-types">
                             <li><strong>Physical Abuse:</strong> Hitting, slapping, kicking, restraining, or any unwanted physical contact</li>
@@ -97,11 +115,11 @@
                             <li><strong>Sexual Abuse:</strong> Any non-consensual sexual activity or coercion</li>
                             <li><strong>Economic Abuse:</strong> Controlling finances, preventing employment, sabotaging work</li>
                             <li><strong>Digital Abuse:</strong> Using technology to harass, stalk, or control</li>
+                            <li><strong>Coercive Control:</strong> Pattern of threatening, degrading, and controlling behaviors</li>
                         </ul>
                     </div>
 
                     <div class="info-card">
-                        <div class="card-icon">💡</div>
                         <h3>Why This Resource Exists</h3>
                         <p>This website exists to provide accessible, comprehensive, and life-saving information to anyone affected by domestic violence.</p>
                         <p>Whether you're experiencing abuse, supporting a loved one, or seeking to educate yourself, you'll find:</p>
@@ -111,6 +129,63 @@
                             <li>Statistics and research to understand the scope</li>
                             <li>Local Idaho resources and national support services</li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Power and Control Wheel -->
+        <section class="content-section alternate-bg" aria-labelledby="wheel-heading">
+            <div class="container">
+                <h2 id="wheel-heading">Understanding the Power and Control Wheel</h2>
+                <p class="section-intro">The Power and Control Wheel is a widely recognized tool that illustrates the pattern of abusive behaviors used by abusers to establish and maintain power and control over their partners.</p>
+                
+                <div class="wheel-container">
+                    <div class="wheel-image-replacement">
+                        <div class="wheel-center">
+                            <strong>POWER<br>AND<br>CONTROL</strong>
+                        </div>
+                        <div class="wheel-sections">
+                            <div class="wheel-section">
+                                <h4>Using Coercion and Threats</h4>
+                                <p>Making and/or carrying out threats to hurt; threatening to leave, commit suicide, report to welfare</p>
+                            </div>
+                            <div class="wheel-section">
+                                <h4>Using Intimidation</h4>
+                                <p>Making her afraid by using looks, actions, gestures; smashing things; destroying property; abusing pets; displaying weapons</p>
+                            </div>
+                            <div class="wheel-section">
+                                <h4>Using Emotional Abuse</h4>
+                                <p>Putting her down; making her feel bad about herself; calling her names; making her think she's crazy; playing mind games; humiliating her</p>
+                            </div>
+                            <div class="wheel-section">
+                                <h4>Using Isolation</h4>
+                                <p>Controlling what she does, who she sees and talks to, what she reads, where she goes; limiting outside involvement; using jealousy to justify actions</p>
+                            </div>
+                            <div class="wheel-section">
+                                <h4>Minimizing, Denying, and Blaming</h4>
+                                <p>Making light of the abuse and not taking concerns seriously; saying the abuse didn't happen; shifting responsibility for abusive behavior</p>
+                            </div>
+                            <div class="wheel-section">
+                                <h4>Using Children</h4>
+                                <p>Making her feel guilty about the children; using children to relay messages; using visitation to harass; threatening to take children away</p>
+                            </div>
+                            <div class="wheel-section">
+                                <h4>Using Male Privilege</h4>
+                                <p>Treating her like a servant; making all the big decisions; acting like the "master of the castle"; being the one to define roles</p>
+                            </div>
+                            <div class="wheel-section">
+                                <h4>Using Economic Abuse</h4>
+                                <p>Preventing her from getting or keeping a job; making her ask for money; giving her an allowance; taking her money; not letting her know about family income</p>
+                            </div>
+                        </div>
+                        <div class="wheel-outer-ring">
+                            <p><strong>Physical Violence • Sexual Violence</strong></p>
+                        </div>
+                    </div>
+                    <div class="wheel-attribution">
+                        <p><em>Adapted from the Domestic Abuse Intervention Project, Duluth, Minnesota.</em></p>
+                        <p>The Power and Control Wheel was developed by the Domestic Abuse Intervention Programs (DAIP) in Duluth, Minnesota. It illustrates the most common tactics used by abusive partners. While originally developed through the experiences of women in abusive relationships with men, these tactics are applicable to all intimate partner relationships.</p>
                     </div>
                 </div>
             </div>
@@ -193,8 +268,10 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Domestic Violence Resources. Information is educational only.</p>
+                <p class="footer-updated">Last updated: <span id="lastUpdated"></span></p>
                 <p class="footer-links">
                     <button id="quickExitFooter" class="footer-exit">Quick Exit</button>
+                    <span class="easter-egg" id="easterEgg" title="Click me!" role="button" tabindex="0" aria-label="Click for a special surprise">♡</span>
                 </p>
             </div>
         </div>
@@ -202,6 +279,5 @@
 
     <!-- Scripts -->
     <script src="script.js"></script>
-    <script src="accessibility-widget.js"></script>
 </body>
 </html>

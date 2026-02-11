@@ -5,40 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Statistics and data about domestic violence in the United States, including real-time estimates of lives impacted.">
     <title>Statistics - Domestic Violence Resources</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>❤️</text></svg>" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- UserWay Accessibility Widget -->
+    <script>
+    (function(d){
+        var s = d.createElement("script");
+        s.setAttribute("data-account", "xGkYEsQ9GU");
+        s.setAttribute("src", "https://cdn.userway.org/widget.js");
+        (d.body || d.head).appendChild(s);
+    })(document)
+    </script>
 </head>
 <body>
     <!-- Quick Exit Button -->
     <button id="quickExit" class="quick-exit-btn" aria-label="Quick exit to Google">
-        <span class="exit-icon">⚠</span> Quick Exit
+        Quick Exit
     </button>
 
-    <!-- Accessibility Widget -->
-    <div id="accessibilityWidget" class="accessibility-widget" role="complementary" aria-label="Accessibility controls">
-        <button class="widget-handle" aria-label="Drag to move accessibility widget">
-            <span class="handle-icon">♿</span>
-        </button>
-        <div class="widget-content">
-            <h3>Accessibility</h3>
-            <div class="widget-controls">
-                <button id="increaseFontBtn" aria-label="Increase font size">A+</button>
-                <button id="decreaseFontBtn" aria-label="Decrease font size">A-</button>
-                <button id="toggleContrastBtn" aria-label="Toggle high contrast">
-                    <span class="contrast-icon">◐</span> Contrast
-                </button>
-            </div>
-        </div>
-    </div>
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+        ↑
+    </button>
 
     <!-- Header/Navigation -->
     <header role="banner">
         <nav role="navigation" aria-label="Main navigation">
             <div class="nav-container">
                 <div class="logo">
-                    <a href="index.html" aria-label="Home">DV Resources</a>
+                    <a href="index.html" aria-label="Home">Domestic Violence Resources</a>
                 </div>
                 <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span></span>
@@ -53,7 +51,7 @@
                 </ul>
                 <div class="emergency-number">
                     <a href="tel:1-800-799-7233" class="emergency-link">
-                        <span class="phone-icon">📞</span> 1-800-799-7233
+                        1-800-799-7233
                     </a>
                 </div>
             </div>
@@ -73,30 +71,35 @@
         <!-- Real-Time Counter -->
         <section class="counter-section" aria-labelledby="counter-heading">
             <div class="container">
-                <h2 id="counter-heading">Lives Lost to Domestic Violence This Year</h2>
-                <p class="counter-subtitle">Estimated lives lost since January 1, 2026 (based on CDC data)</p>
+                <h2 id="counter-heading">Estimated Lives Lost to Domestic Violence This Year</h2>
+                <p class="counter-subtitle">Estimated lives lost since January 1, 2026</p>
                 
                 <div class="counter-grid">
                     <div class="counter-card">
                         <div class="counter-label">Women</div>
                         <div class="counter-number" id="womenCounter" aria-live="polite">0</div>
-                        <div class="counter-info">~3 women killed daily*</div>
+                        <div class="counter-info">Approximately 3 women killed daily</div>
                     </div>
                     <div class="counter-card">
                         <div class="counter-label">Men</div>
                         <div class="counter-number" id="menCounter" aria-live="polite">0</div>
-                        <div class="counter-info">~1 man killed daily*</div>
+                        <div class="counter-info">Approximately 1 man killed daily</div>
                     </div>
                     <div class="counter-card">
                         <div class="counter-label">Total Lives</div>
                         <div class="counter-number" id="totalCounter" aria-live="polite">0</div>
-                        <div class="counter-info">~4+ people killed daily*</div>
+                        <div class="counter-info">Approximately 4+ people killed daily</div>
                     </div>
                 </div>
                 
                 <div class="counter-citation">
-                    <p><em>* Estimates based on CDC's National Violent Death Reporting System and research indicating approximately 1,500-2,000 intimate partner homicides occur annually in the United States. Actual numbers may vary. These figures represent intimate partner homicides only and do not include other domestic violence-related deaths.</em></p>
-                    <p><strong>Sources:</strong> Centers for Disease Control and Prevention (CDC), National Coalition Against Domestic Violence (NCADV), Bureau of Justice Statistics</p>
+                    <p><strong>Methodology:</strong> These estimates are based on CDC's National Violent Death Reporting System data indicating approximately 1,500-2,000 intimate partner homicides occur annually in the United States. Using a conservative estimate of 1,600 annual deaths with gender distribution of approximately 75% women and 25% men, the counter calculates deaths from the start of the calendar year.</p>
+                    <p><strong>Important Note:</strong> These figures represent intimate partner homicides only and do not include other domestic violence-related deaths, suicides, or indirect fatalities. Actual numbers may vary year to year.</p>
+                    <p><strong>Sources:</strong> 
+                        <a href="https://www.cdc.gov/violenceprevention/intimatepartnerviolence/fastfact.html" target="_blank" rel="noopener noreferrer">CDC - Intimate Partner Violence</a> | 
+                        <a href="https://ncadv.org/STATISTICS" target="_blank" rel="noopener noreferrer">National Coalition Against Domestic Violence</a> | 
+                        <a href="https://bjs.ojp.gov/" target="_blank" rel="noopener noreferrer">Bureau of Justice Statistics</a>
+                    </p>
                 </div>
             </div>
         </section>
@@ -110,73 +113,73 @@
                     <article class="stat-card">
                         <div class="stat-number">1 in 4</div>
                         <div class="stat-description">Women experience severe intimate partner physical violence, intimate partner sexual violence, and/or intimate partner stalking in their lifetime</div>
-                        <div class="stat-source">— CDC, National Intimate Partner and Sexual Violence Survey</div>
+                        <div class="stat-source"><a href="https://www.cdc.gov/violenceprevention/intimatepartnerviolence/fastfact.html" target="_blank" rel="noopener noreferrer">Source: CDC National Intimate Partner and Sexual Violence Survey</a></div>
                     </article>
 
                     <article class="stat-card">
                         <div class="stat-number">1 in 9</div>
                         <div class="stat-description">Men experience severe intimate partner physical violence, intimate partner sexual violence, and/or intimate partner stalking in their lifetime</div>
-                        <div class="stat-source">— CDC, National Intimate Partner and Sexual Violence Survey</div>
+                        <div class="stat-source"><a href="https://www.cdc.gov/violenceprevention/intimatepartnerviolence/fastfact.html" target="_blank" rel="noopener noreferrer">Source: CDC National Intimate Partner and Sexual Violence Survey</a></div>
                     </article>
 
                     <article class="stat-card">
                         <div class="stat-number">1 in 3</div>
                         <div class="stat-description">Women have experienced some form of physical violence by an intimate partner (including slapping, pushing, or shoving)</div>
-                        <div class="stat-source">— CDC</div>
+                        <div class="stat-source"><a href="https://www.cdc.gov/violenceprevention/datasources/nisvs/index.html" target="_blank" rel="noopener noreferrer">Source: CDC</a></div>
                     </article>
 
                     <article class="stat-card">
                         <div class="stat-number">1 in 4</div>
                         <div class="stat-description">Men have experienced some form of physical violence by an intimate partner</div>
-                        <div class="stat-source">— CDC</div>
+                        <div class="stat-source"><a href="https://www.cdc.gov/violenceprevention/datasources/nisvs/index.html" target="_blank" rel="noopener noreferrer">Source: CDC</a></div>
                     </article>
 
                     <article class="stat-card">
                         <div class="stat-number">10 million</div>
                         <div class="stat-description">People experience domestic violence annually in the United States</div>
-                        <div class="stat-source">— American Journal of Preventive Medicine</div>
+                        <div class="stat-source"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3876290/" target="_blank" rel="noopener noreferrer">Source: American Journal of Preventive Medicine</a></div>
                     </article>
 
                     <article class="stat-card">
-                        <div class="stat-number">20 per min</div>
+                        <div class="stat-number">20 per minute</div>
                         <div class="stat-description">People are physically abused by an intimate partner in the United States</div>
-                        <div class="stat-source">— National Coalition Against Domestic Violence</div>
+                        <div class="stat-source"><a href="https://ncadv.org/STATISTICS" target="_blank" rel="noopener noreferrer">Source: National Coalition Against Domestic Violence</a></div>
                     </article>
 
                     <article class="stat-card">
                         <div class="stat-number">72%</div>
                         <div class="stat-description">Of all murder-suicides involve an intimate partner; 94% of victims are female</div>
-                        <div class="stat-source">— Violence Policy Center</div>
+                        <div class="stat-source"><a href="http://vpc.org/studies/amroul2021.pdf" target="_blank" rel="noopener noreferrer">Source: Violence Policy Center</a></div>
                     </article>
 
                     <article class="stat-card">
                         <div class="stat-number">1 in 15</div>
                         <div class="stat-description">Children are exposed to intimate partner violence annually, and 90% are eyewitnesses</div>
-                        <div class="stat-source">— UNICEF</div>
+                        <div class="stat-source"><a href="https://www.unicef.org/protection/violence-against-children" target="_blank" rel="noopener noreferrer">Source: UNICEF</a></div>
                     </article>
 
                     <article class="stat-card">
                         <div class="stat-number">19%</div>
                         <div class="stat-description">Of domestic violence involves a weapon</div>
-                        <div class="stat-source">— Bureau of Justice Statistics</div>
+                        <div class="stat-source"><a href="https://bjs.ojp.gov/intimate-partner-violence" target="_blank" rel="noopener noreferrer">Source: Bureau of Justice Statistics</a></div>
                     </article>
 
                     <article class="stat-card">
-                        <div class="stat-number">5x</div>
+                        <div class="stat-number">5x increased risk</div>
                         <div class="stat-description">When a gun is present in a domestic violence situation, the risk of homicide increases by 500%</div>
-                        <div class="stat-source">— National Coalition Against Domestic Violence</div>
+                        <div class="stat-source"><a href="https://ncadv.org/STATISTICS" target="_blank" rel="noopener noreferrer">Source: National Coalition Against Domestic Violence</a></div>
                     </article>
 
                     <article class="stat-card">
                         <div class="stat-number">48.4%</div>
                         <div class="stat-description">Of women have experienced psychological aggression by an intimate partner in their lifetime</div>
-                        <div class="stat-source">— CDC</div>
+                        <div class="stat-source"><a href="https://www.cdc.gov/violenceprevention/datasources/nisvs/index.html" target="_blank" rel="noopener noreferrer">Source: CDC</a></div>
                     </article>
 
                     <article class="stat-card">
                         <div class="stat-number">48.8%</div>
                         <div class="stat-description">Of men have experienced psychological aggression by an intimate partner in their lifetime</div>
-                        <div class="stat-source">— CDC</div>
+                        <div class="stat-source"><a href="https://www.cdc.gov/violenceprevention/datasources/nisvs/index.html" target="_blank" rel="noopener noreferrer">Source: CDC</a></div>
                     </article>
                 </div>
             </div>
@@ -191,19 +194,19 @@
                     <article class="economic-card">
                         <h3>$8.3 Billion</h3>
                         <p>Estimated annual lifetime economic cost of intimate partner violence in the United States</p>
-                        <p class="source-note">Source: CDC</p>
+                        <p class="source-note"><a href="https://www.cdc.gov/violenceprevention/intimatepartnerviolence/fastfact.html" target="_blank" rel="noopener noreferrer">Source: CDC</a></p>
                     </article>
 
                     <article class="economic-card">
                         <h3>8 Million Days</h3>
-                        <p>Days of paid work lost annually due to domestic violence—equivalent to 32,000 full-time jobs</p>
-                        <p class="source-note">Source: CDC</p>
+                      <p>Days of paid work lost annually due to domestic violence—equivalent to 32,000 full-time jobs</p>
+                        <p class="source-note"><a href="https://www.cdc.gov/violenceprevention/intimatepartnerviolence/consequences.html" target="_blank" rel="noopener noreferrer">Source: CDC</a></p>
                     </article>
 
                     <article class="economic-card">
                         <h3>Workplace Impact</h3>
                         <p>96% of employed domestic violence survivors experience problems at work due to abuse. Effects include tardiness, missed work, keeping a job, and job performance.</p>
-                        <p class="source-note">Source: Corporate Alliance to End Partner Violence</p>
+                        <p class="source-note"><a href="https://www.caepv.org/" target="_blank" rel="noopener noreferrer">Source: Corporate Alliance to End Partner Violence</a></p>
                     </article>
                 </div>
             </div>
@@ -222,7 +225,7 @@
                             <li>26% of gay men and 37% of bisexual men experience rape, physical violence, and/or stalking by an intimate partner</li>
                             <li>Transgender individuals face disproportionately high rates of domestic violence and discrimination</li>
                         </ul>
-                        <p class="source-note">Source: CDC, NCADV</p>
+                        <p class="source-note"><a href="https://www.cdc.gov/violenceprevention/intimatepartnerviolence/fastfact.html" target="_blank" rel="noopener noreferrer">Source: CDC</a>, <a href="https://ncadv.org/statistics" target="_blank" rel="noopener noreferrer">NCADV</a></p>
                     </article>
 
                     <article class="vulnerable-card">
@@ -232,7 +235,7 @@
                             <li>Native American women are murdered at more than 10 times the national average</li>
                             <li>Over half of Native American women have experienced sexual violence</li>
                         </ul>
-                        <p class="source-note">Source: National Institute of Justice, CDC</p>
+                        <p class="source-note"><a href="https://nij.ojp.gov/topics/articles/violence-against-american-indian-and-alaska-native-women-and-men" target="_blank" rel="noopener noreferrer">Source: National Institute of Justice</a>, <a href="https://www.cdc.gov/" target="_blank" rel="noopener noreferrer">CDC</a></p>
                     </article>
 
                     <article class="vulnerable-card">
@@ -241,45 +244,18 @@
                             <li>Women with disabilities are 40% more likely to experience intimate partner violence than women without disabilities</li>
                             <li>People with disabilities often face unique forms of abuse including withholding medication, destroying assistive devices, or threatening institutionalization</li>
                         </ul>
-                        <p class="source-note">Source: American Psychological Association</p>
+                        <p class="source-note"><a href="https://www.apa.org/topics/disability/violence" target="_blank" rel="noopener noreferrer">Source: American Psychological Association</a></p>
                     </article>
 
                     <article class="vulnerable-card">
-                        <h3>Immigrants & Refugees</h3>
+                        <h3>Children</h3>
                         <ul>
-                            <li>Immigrant women may face additional barriers including language barriers, fear of deportation, lack of knowledge about rights, and cultural isolation</li>
-                            <li>Abusers often use immigration status as a tool of control and manipulation</li>
+                            <li>15.5 million children in the United States live in families where intimate partner violence occurred at least once in the past year</li>
+                            <li>Children who witness domestic violence are at higher risk for anxiety, depression, behavioral problems, and becoming victims or perpetrators later in life</li>
+                            <li>90% of children exposed to intimate partner violence are eyewitnesses to the abuse</li>
                         </ul>
-                        <p class="source-note">Source: National Immigrant Women's Advocacy Project</p>
+                        <p class="source-note"><a href="https://www.unicef.org/protection/violence-against-children" target="_blank" rel="noopener noreferrer">Source: UNICEF</a>, <a href="https://www.aap.org/" target="_blank" rel="noopener noreferrer">American Academy of Pediatrics</a></p>
                     </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Impact on Children -->
-        <section class="content-section" aria-labelledby="children-heading">
-            <div class="container">
-                <h2 id="children-heading">Impact on Children</h2>
-                
-                <div class="children-stats">
-                    <div class="children-stat-box">
-                        <p class="large-text">Children who witness domestic violence are at higher risk for:</p>
-                        <ul class="impact-list">
-                            <li>Anxiety, depression, and low self-esteem</li>
-                            <li>Behavioral problems and aggression</li>
-                            <li>Academic difficulties and poor school performance</li>
-                            <li>Becoming victims or perpetrators of violence later in life</li>
-                            <li>Physical health problems including asthma, allergies, and gastrointestinal issues</li>
-                            <li>Sleep disturbances and nightmares</li>
-                        </ul>
-                        <p class="source-note">Source: American Academy of Pediatrics, UNICEF</p>
-                    </div>
-
-                    <div class="stat-highlight">
-                        <h3>15.5 Million</h3>
-                        <p>Children in the United States live in families where intimate partner violence occurred at least once in the past year</p>
-                        <p class="source-note">Source: UNICEF</p>
-                    </div>
                 </div>
             </div>
         </section>
@@ -293,19 +269,19 @@
                     <article class="reporting-card">
                         <div class="reporting-stat">Only 34%</div>
                         <p>Of intimate partner violence is reported to police</p>
-                        <p class="source-note">Source: Bureau of Justice Statistics</p>
+                        <p class="source-note"><a href="https://bjs.ojp.gov/" target="_blank" rel="noopener noreferrer">Source: Bureau of Justice Statistics</a></p>
                     </article>
 
                     <article class="reporting-card">
-                        <div class="reporting-stat">Average 7</div>
-                        <p>Times a victim returns to an abusive relationship before leaving for good</p>
-                        <p class="source-note">Source: National Domestic Violence Hotline</p>
+                        <div class="reporting-stat">Average 7 times</div>
+                        <p>A victim returns to an abusive relationship before leaving for good</p>
+                        <p class="source-note"><a href="https://www.thehotline.org/" target="_blank" rel="noopener noreferrer">Source: National Domestic Violence Hotline</a></p>
                     </article>
 
                     <article class="reporting-card">
-                        <div class="reporting-stat">Leaving is Dangerous</div>
+                        <div class="reporting-stat">70x more likely</div>
                         <p>Women are 70 times more likely to be killed in the weeks after leaving an abusive relationship</p>
-                        <p class="source-note">Source: National Coalition Against Domestic Violence</p>
+                        <p class="source-note"><a href="https://ncadv.org/statistics" target="_blank" rel="noopener noreferrer">Source: National Coalition Against Domestic Violence</a></p>
                     </article>
                 </div>
             </div>
@@ -330,7 +306,7 @@
                 <h2 id="disclaimer-heading">Important Disclaimer</h2>
                 <p><strong>This website is for informational purposes only and is not a substitute for professional help.</strong></p>
                 <p>If you or someone you know is in immediate danger, please call 911 or your local emergency services. The information provided on this site is intended to be educational and supportive, but it should not replace advice from qualified professionals including law enforcement, medical personnel, therapists, or legal advisors.</p>
-                <p>We strive to keep all resource links current and accurate, but organizations may change contact information or services. Please verify critical information directly with service providers.</p>
+                <p>We strive to keep all statistics current and accurate by linking directly to authoritative sources. However, research and data are constantly evolving. Please verify critical information directly with the cited sources.</p>
                 <p class="privacy-note"><strong>Privacy & Safety:</strong> If you're in an unsafe situation, please use private browsing mode and remember to clear your browser history. Use the Quick Exit button at the top of any page to immediately leave this site.</p>
             </div>
         </section>
@@ -371,8 +347,10 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Domestic Violence Resources. Information is educational only.</p>
+                <p class="footer-updated">Last updated: <span id="lastUpdated"></span></p>
                 <p class="footer-links">
                     <button id="quickExitFooter" class="footer-exit">Quick Exit</button>
+                    <span class="easter-egg" id="easterEgg" title="Click me!" role="button" tabindex="0" aria-label="Click for a special surprise">♡</span>
                 </p>
             </div>
         </div>
@@ -380,7 +358,6 @@
 
     <!-- Scripts -->
     <script src="script.js"></script>
-    <script src="accessibility-widget.js"></script>
     <script src="counter.js"></script>
 </body>
 </html>
