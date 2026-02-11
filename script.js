@@ -6,19 +6,21 @@
 // ========== Safety Modal ==========
 document.addEventListener('DOMContentLoaded', function() {
     const safetyModal = document.getElementById('safetyModal');
-    const modalClose = document.getElementById('modalClose');
+    const dismissButton = document.getElementById('dismissSafetyModal');
     
-    if (safetyModal && modalClose) {
+    if (safetyModal && dismissButton) {
         // Check if user has dismissed the modal in this session
         const modalDismissed = sessionStorage.getItem('safetyModalDismissed');
         
         if (!modalDismissed) {
-            // Show modal
-            safetyModal.classList.add('active');
+            // Show modal after a brief delay
+            setTimeout(function() {
+                safetyModal.classList.add('active');
+            }, 500);
         }
         
         // Close modal on button click
-        modalClose.addEventListener('click', function() {
+        dismissButton.addEventListener('click', function() {
             safetyModal.classList.remove('active');
             sessionStorage.setItem('safetyModalDismissed', 'true');
         });
@@ -303,59 +305,71 @@ function logPageView() {
     // Consider not tracking at all for safety reasons
 }
 
-// ========== Easter Egg - Animated Hearts ==========
+// ========== Easter Egg - Heartbeat with Ripple Effect ==========
 document.addEventListener('DOMContentLoaded', function() {
     const easterEgg = document.getElementById('easterEgg');
     
     if (easterEgg) {
+        // Determine color based on current page
+        const page = document.location.pathname.split('/').pop().replace('.html', '') || 'index';
+        const colors = {
+            'index': '#C41E3A',      // Primary red
+            'resources': '#DC143C',  // Crimson
+            'signs': '#B22222',      // Firebrick
+            'stats': '#8B0000'       // Dark red
+        };
+        const heartColor = colors[page] || colors['index'];
+        
         // Click handler
-        easterEgg.addEventListener('click', createHeartBurst);
+        easterEgg.addEventListener('click', function() {
+            triggerHeartbeat(heartColor);
+        });
         
         // Keyboard accessibility
         easterEgg.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                createHeartBurst();
+                triggerHeartbeat(heartColor);
             }
         });
     }
     
-    function createHeartBurst() {
-        const numberOfHearts = 15; // Number of hearts to create
+    function triggerHeartbeat(color) {
+        const easterEggEl = document.getElementById('easterEgg');
         
-        for (let i = 0; i < numberOfHearts; i++) {
-            setTimeout(function() {
-                createFloatingHeart();
-            }, i * 100); // Stagger the heart creation
-        }
+        // Add heartbeat animation class
+        easterEggEl.classList.add('heartbeat-active');
+        
+        // Create ripple effects
+        createRipple(color, 0);
+        setTimeout(function() { createRipple(color, 0); }, 150);
+        setTimeout(function() { createRipple(color, 0); }, 800);
+        setTimeout(function() { createRipple(color, 0); }, 950);
+        
+        // Remove heartbeat class after animation
+        setTimeout(function() {
+            easterEggEl.classList.remove('heartbeat-active');
+        }, 2000);
     }
     
-    function createFloatingHeart() {
-        const heart = document.createElement('div');
-        heart.className = 'floating-heart';
-        
-        // Random horizontal starting position near the easter egg
-        const easterEggRect = document.getElementById('easterEgg').getBoundingClientRect();
-        const startX = easterEggRect.left + (Math.random() - 0.5) * 100;
-        const startY = easterEggRect.top;
-        
-        heart.style.left = startX + 'px';
-        heart.style.top = startY + 'px';
-        
-        // Random animation duration for variety
-        const duration = 2.5 + Math.random() * 1.5;
-        heart.style.animationDuration = duration + 's';
-        
-        // Random horizontal drift
-        const drift = (Math.random() - 0.5) * 200;
-        heart.style.setProperty('--drift', drift + 'px');
-        
-        document.body.appendChild(heart);
-        
-        // Remove heart after animation completes
+    function createRipple(color, delay) {
         setTimeout(function() {
-            heart.remove();
-        }, duration * 1000);
+            const easterEggEl = document.getElementById('easterEgg');
+            const rect = easterEggEl.getBoundingClientRect();
+            
+            const ripple = document.createElement('div');
+            ripple.className = 'sonar-ripple';
+            ripple.style.left = (rect.left + rect.width / 2) + 'px';
+            ripple.style.top = (rect.top + rect.height / 2) + 'px';
+            ripple.style.borderColor = color;
+            
+            document.body.appendChild(ripple);
+            
+            // Remove ripple after animation
+            setTimeout(function() {
+                ripple.remove();
+            }, 2000);
+        }, delay);
     }
 });
 
