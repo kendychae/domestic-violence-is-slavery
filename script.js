@@ -307,23 +307,75 @@ function logPageView() {
 }
 
 // ========== Easter Egg - Heartbeat with Ripple Effect ==========
+// Define functions in global scope for proper access
+function triggerHeartbeat(color) {
+    const easterEggEl = document.getElementById('easterEgg');
+    if (!easterEggEl) return;
+    
+    // Add heartbeat animation class
+    easterEggEl.classList.add('heartbeat-active');
+    
+    // Create ripple effects
+    createRipple(color, 0);
+    setTimeout(function() { createRipple(color, 0); }, 150);
+    setTimeout(function() { createRipple(color, 0); }, 800);
+    setTimeout(function() { createRipple(color, 0); }, 950);
+    
+    // Remove heartbeat class after animation
+    setTimeout(function() {
+        easterEggEl.classList.remove('heartbeat-active');
+    }, 2000);
+}
+
+function createRipple(color, delay) {
+    setTimeout(function() {
+        const easterEggEl = document.getElementById('easterEgg');
+        if (!easterEggEl) return;
+        
+        const rect = easterEggEl.getBoundingClientRect();
+        
+        const ripple = document.createElement('div');
+        ripple.className = 'sonar-ripple';
+        ripple.style.left = (rect.left + rect.width / 2) + 'px';
+        ripple.style.top = (rect.top + rect.height / 2) + 'px';
+        ripple.style.borderColor = color;
+        
+        document.body.appendChild(ripple);
+        
+        // Remove ripple after animation
+        setTimeout(function() {
+            if (ripple && ripple.parentNode) {
+                ripple.remove();
+            }
+        }, 2000);
+    }, delay);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const easterEgg = document.getElementById('easterEgg');
     
     if (easterEgg) {
         // Determine color based on current page
-        const page = document.location.pathname.split('/').pop().replace('.html', '') || 'index';
+        const pathname = window.location.pathname;
+        let page = 'index';
+        
+        if (pathname.indexOf('resources') !== -1) page = 'resources';
+        else if (pathname.indexOf('signs') !== -1) page = 'signs';
+        else if (pathname.indexOf('stats') !== -1) page = 'stats';
+        else if (pathname.indexOf('idaho') !== -1) page = 'idaho';
+        
         const colors = {
             'index': '#C41E3A',      // Primary red
             'resources': '#DC143C',  // Crimson
             'signs': '#B22222',      // Firebrick
             'stats': '#8B0000',      // Dark red
-            'idaho': '#B22222'       // Firebrick (same as signs)
+            'idaho': '#B22222'       // Firebrick
         };
         const heartColor = colors[page] || colors['index'];
         
         // Click handler
-        easterEgg.addEventListener('click', function() {
+        easterEgg.addEventListener('click', function(e) {
+            e.preventDefault();
             triggerHeartbeat(heartColor);
         });
         
@@ -334,44 +386,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 triggerHeartbeat(heartColor);
             }
         });
-    }
-    
-    function triggerHeartbeat(color) {
-        const easterEggEl = document.getElementById('easterEgg');
-        
-        // Add heartbeat animation class
-        easterEggEl.classList.add('heartbeat-active');
-        
-        // Create ripple effects
-        createRipple(color, 0);
-        setTimeout(function() { createRipple(color, 0); }, 150);
-        setTimeout(function() { createRipple(color, 0); }, 800);
-        setTimeout(function() { createRipple(color, 0); }, 950);
-        
-        // Remove heartbeat class after animation
-        setTimeout(function() {
-            easterEggEl.classList.remove('heartbeat-active');
-        }, 2000);
-    }
-    
-    function createRipple(color, delay) {
-        setTimeout(function() {
-            const easterEggEl = document.getElementById('easterEgg');
-            const rect = easterEggEl.getBoundingClientRect();
-            
-            const ripple = document.createElement('div');
-            ripple.className = 'sonar-ripple';
-            ripple.style.left = (rect.left + rect.width / 2) + 'px';
-            ripple.style.top = (rect.top + rect.height / 2) + 'px';
-            ripple.style.borderColor = color;
-            
-            document.body.appendChild(ripple);
-            
-            // Remove ripple after animation
-            setTimeout(function() {
-                ripple.remove();
-            }, 2000);
-        }, delay);
     }
 });
 
