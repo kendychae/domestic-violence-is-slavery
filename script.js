@@ -72,8 +72,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const lastUpdatedElements = document.querySelectorAll('#lastUpdated');
     
     if (lastUpdatedElements.length > 0) {
-        const currentDate = new Date();
-        const formattedDate = currentDate.toLocaleDateString('en-US', {
+        // Last content update: February 10, 2026
+        const lastUpdateDate = new Date('2026-02-10');
+        const formattedDate = lastUpdateDate.toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'long',
             day: 'numeric'
@@ -316,7 +317,8 @@ document.addEventListener('DOMContentLoaded', function() {
             'index': '#C41E3A',      // Primary red
             'resources': '#DC143C',  // Crimson
             'signs': '#B22222',      // Firebrick
-            'stats': '#8B0000'       // Dark red
+            'stats': '#8B0000',      // Dark red
+            'idaho': '#B22222'       // Firebrick (same as signs)
         };
         const heartColor = colors[page] || colors['index'];
         
