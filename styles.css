@@ -1546,7 +1546,483 @@ footer {
     border-width: 0;
 }
 
-/* Print styles */
+/* ========== Idaho-Specific Section ========== */
+.idaho-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-top: 4px solid var(--accent-color);
+}
+
+.idaho-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.idaho-shape {
+    display: inline-block;
+    width: 80px;
+    height: 120px;
+    margin-bottom: 20px;
+}
+
+.idaho-svg {
+    width: 100%;
+    height: 100%;
+    color: var(--accent-color);
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.idaho-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.idaho-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.idaho-stat-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--accent-color);
+}
+
+.idaho-stat-card h3 {
+    color: var(--accent-color);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.idaho-data-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.idaho-data-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.idaho-data-list li:last-child {
+    border-bottom: none;
+}
+
+.idaho-data-list strong {
+    color: var(--text-primary);
+}
+
+.idaho-data-list a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.idaho-data-list a:hover {
+    text-decoration: underline;
+}
+
+.idaho-resources {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 30px;
+}
+
+.idaho-resources h3 {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.resources-intro {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.idaho-resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.idaho-resource-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+}
+
+.idaho-resource-card h4 {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.idaho-resource-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.idaho-resource-card li {
+    padding: 8px 0;
+    line-height: 1.6;
+}
+
+.idaho-resource-card a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.idaho-resource-card a:hover {
+    text-decoration: underline;
+}
+
+.idaho-legal {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 30px;
+}
+
+.idaho-legal h3 {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.legal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.legal-card {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+}
+
+.legal-card h4 {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.legal-card p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.legal-card a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.legal-card a:hover {
+    text-decoration: underline;
+}
+
+.idaho-footer-note {
+    background: #fff3cd;
+    border: 2px solid #ffc107;
+    border-radius: 8px;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+.idaho-footer-note p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.idaho-footer-note strong {
+    color: var(--text-primary);
+}
+
+.idaho-footer-note a {
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.idaho-footer-note a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .idaho-shape {
+        width: 60px;
+        height: 90px;
+    }
+    
+    .idaho-stats-grid,
+    .idaho-resources-grid,
+    .legal-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .idaho-resources,
+    .idaho-legal {
+        padding: 25px 20px;
+    }
+    
+    .idaho-stat-card {
+        padding: 20px;
+    }
+}
+
+/* Print styles *//* ========== Signs Viewer Modal ========== */
+.signs-viewer-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 10001;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.signs-viewer-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.viewer-content {
+    position: relative;
+    background: var(--white);
+    border-radius: 12px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 40px 30px 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.viewer-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 5px 10px;
+    line-height: 1;
+    transition: color var(--transition-fast);
+    z-index: 10;
+}
+
+.viewer-close:hover,
+.viewer-close:focus {
+    color: var(--accent-color);
+}
+
+.viewer-card-container {
+    margin-bottom: 30px;
+}
+
+.viewer-card-container h3 {
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.viewer-card-container .type-description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.viewer-card-container h4 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.viewer-card-container .signs-list {
+    list-style: none;
+    padding: 0;
+}
+
+.viewer-card-container .signs-list li {
+    padding: 12px 0 12px 30px;
+    position: relative;
+    line-height: 1.6;
+    font-size: 1.05rem;
+    border-bottom: 1px solid #eee;
+}
+
+.viewer-card-container .signs-list li::before {
+    content: '⚠';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.viewer-card-container .signs-list li:last-child {
+    border-bottom: none;
+}
+
+.viewer-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 2px solid #eee;
+    padding-top: 20px;
+}
+
+.viewer-prev,
+.viewer-next {
+    background: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.viewer-prev:hover,
+.viewer-next:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(196, 30, 58, 0.3);
+}
+
+.viewer-prev:disabled,
+.viewer-next:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.viewer-counter {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+/* Make cards clickable */
+.abuse-type-card {
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.abuse-type-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.abuse-type-card:active {
+    transform: translateY(-2px);
+}
+
+/* Swipe indicator for mobile */
+.viewer-content::after {
+    content: '';
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .signs-viewer-modal {
+        padding: 10px;
+    }
+    
+    .viewer-content {
+        padding: 30px 20px 20px;
+        max-height: 95vh;
+    }
+    
+    .viewer-card-container h3 {
+        font-size: 1.6rem;
+    }
+    
+    .viewer-card-container .type-description {
+        font-size: 1rem;
+    }
+    
+    .viewer-card-container h4 {
+        font-size: 1.15rem;
+    }
+    
+    .viewer-card-container .signs-list li {
+        font-size: 0.95rem;
+        padding: 10px 0 10px 25px;
+    }
+    
+    .viewer-navigation {
+        flex-direction: column-reverse;
+        gap: 12px;
+    }
+    
+    .viewer-prev,
+    .viewer-next {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+    }
+    
+    .viewer-counter {
+        order: -1;
+    }
+    
+    /* Show swipe hint on mobile */
+    .viewer-content::after {
+        display: block;
+        content: 'Swipe to navigate';
+        text-align: center;
+        color: #999;
+        font-size: 0.85rem;
+        margin-top: 10px;
+    }
+}
 @media print {
     .quick-exit-btn,
     .scroll-to-top,

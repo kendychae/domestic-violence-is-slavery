@@ -373,9 +373,170 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// ========== Export functions for testing ==========
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
+// ========== Signs Viewer Modal with Carousel ==========
+document.addEventListener('DOMContentLoaded', function() {
+    const viewerModal = document.getElementById('signsViewer');
+    const viewerCardContainer = document.getElementById('viewerCardContainer');
+    const viewerCounter = document.getElementById('viewerCounter');
+    const closeBtn = document.getElementById('closeViewer');
+    const prevBtn = document.getElementById('viewerPrev');
+    const nextBtn = document.getElementById('viewerNext');
+    const abuseCards = document.querySelectorAll('.abuse-type-card');
+    
+    if (!viewerModal || abuseCards.length === 0) return;
+    
+    let currentIndex = 0;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const MIN_SWIPE_DISTANCE = 50;
+    
+    // Store card contents
+    const cardContents = Array.from(abuseCards).map(card => card.innerHTML);
+    
+    // Add click handlers to all abuse type cards
+    abuseCards.forEach((card, index) => {
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('aria-label', `Click to view ${card.querySelector('h3').textContent} details`);
+        
+        card.addEventListener('click', function() {
+            openViewer(index);
+        });
+        
+        card.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openViewer(index);
+            }
+        });
+    });
+    
+    function openViewer(index) {
+        currentIndex = index;
+        showCard(currentIndex);
+        viewerModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Focus management for accessibility
+        setTimeout(() => {
+            closeBtn.focus();
+        }, 100);
+    }
+    
+    function closeViewer() {
+        viewerModal.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        // Return focus to the card that was clicked
+        if (abuseCards[currentIndex]) {
+            abuseCards[currentIndex].focus();
+        }
+    }
+    
+    function showCard(index) {
+        currentIndex = index;
+        viewerCardContainer.innerHTML = cardContents[index];
+        viewerCounter.textContent = `${index + 1} of ${cardContents.length}`;
+        
+        // Update button states
+        prevBtn.disabled = index === 0;
+        nextBtn.disabled = index === cardContents.length - 1;
+        
+        // Announce to screen readers
+        viewerCardContainer.setAttribute('aria-live', 'polite');
+    }
+    
+    function navigatePrev() {
+        if (currentIndex > 0) {
+            showCard(currentIndex - 1);
+        }
+    }
+    
+    function navigateNext() {
+        if (currentIndex < cardContents.length - 1) {
+            showCard(currentIndex + 1);
+        }
+    }
+    
+    // Close button handler
+    closeBtn.addEventListener('click', closeViewer);
+    
+    // Navigation button handlers
+    prevBtn.addEventListener('click', navigatePrev);
+    nextBtn.addEventListener('click', navigateNext);
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (!viewerModal.classList.contains('active')) return;
+        
+        if (e.key === 'Escape') {
+            closeViewer();
+        } else if (e.key === 'ArrowLeft') {
+            navigatePrev();
+        } else if (e.key === 'ArrowRight') {
+            navigateNext();
+        }
+    });
+    
+    // Touch swipe detection
+    viewerModal.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    viewerModal.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        const swipeDistance = touchEndX - touchStartX;
+        
+        if (Math.abs(swipeDistance) > MIN_SWIPE_DISTANCE) {
+            if (swipeDistance > 0) {
+                // Swiped right - go to previous
+                navigatePrev();
+            } else {
+                // Swiped left - go to next
+                navigateNext();
+            }
+        }
+    }
+    
+    // Close modal when clicking outside content
+    viewerModal.addEventListener('click', function(e) {
+        if (e.target === viewerModal) {
+            closeViewer();
+        }
+    });
+    
+    // Focus trap inside modal
+    const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+    
+    viewerModal.addEventListener('keydown', function(e) {
+        if (!viewerModal.classList.contains('active')) return;
+        
+        if (e.key === 'Tab') {
+            const focusableContent = viewerModal.querySelectorAll(focusableElements);
+            const firstFocusable = focusableContent[0];
+            const lastFocusable = focusableContent[focusableContent.length - 1];
+            
+            if (e.shiftKey) {
+                // Shift + Tab
+                if (document.activeElement === firstFocusable) {
+                    e.preventDefault();
+                    lastFocusable.focus();
+                }
+            } else {
+                // Tab
+                if (document.activeElement === lastFocusable) {
+                    e.preventDefault();
+                    firstFocusable.focus();
+                }
+            }
+        }
+    });
+});
+
         validateEmail,
         validatePhone,
         formatPhoneNumber,

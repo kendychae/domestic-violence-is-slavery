@@ -414,6 +414,25 @@
         </div>
     </footer>
 
+    <!-- Signs Viewer Modal -->
+    <div class="signs-viewer-modal" id="signsViewer" role="dialog" aria-modal="true" aria-labelledby="viewer-title">
+        <div class="viewer-content">
+            <button class="viewer-close" id="closeViewer" aria-label="Close viewer">×</button>
+            <div class="viewer-card-container" id="viewerCardContainer" role="article">
+                <!-- Card content will be dynamically inserted here -->
+            </div>
+            <div class="viewer-navigation">
+                <button class="viewer-prev" id="viewerPrev" aria-label="Previous sign">
+                    <span aria-hidden="true">←</span> Previous
+                </button>
+                <span class="viewer-counter" id="viewerCounter" aria-live="polite"></span>
+                <button class="viewer-next" id="viewerNext" aria-label="Next sign">
+                    Next <span aria-hidden="true">→</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="script.js"></script>
 </body>
