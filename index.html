@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive domestic violence resource center providing support, information, and emergency assistance for survivors.">
+    <meta name="keywords" content="domestic violence, domestic abuse, help, resources, support, hotline, Idaho">
+    <title>Home - Domestic Violence Resources</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Quick Exit Button -->
+    <button id="quickExit" class="quick-exit-btn" aria-label="Quick exit to Google">
+        <span class="exit-icon">⚠</span> Quick Exit
+    </button>
+
+    <!-- Accessibility Widget -->
+    <div id="accessibilityWidget" class="accessibility-widget" role="complementary" aria-label="Accessibility controls">
+        <button class="widget-handle" aria-label="Drag to move accessibility widget">
+            <span class="handle-icon">♿</span>
+        </button>
+        <div class="widget-content">
+            <h3>Accessibility</h3>
+            <div class="widget-controls">
+                <button id="increaseFontBtn" aria-label="Increase font size">A+</button>
+                <button id="decreaseFontBtn" aria-label="Decrease font size">A-</button>
+                <button id="toggleContrastBtn" aria-label="Toggle high contrast">
+                    <span class="contrast-icon">◐</span> Contrast
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header/Navigation -->
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html" aria-label="Home">DV Resources</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="signs.html">Signs & Symptoms</a></li>
+                    <li><a href="stats.html">Statistics</a></li>
+                </ul>
+                <div class="emergency-number">
+                    <a href="tel:1-800-799-7233" class="emergency-link">
+                        <span class="phone-icon">📞</span> 1-800-799-7233
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main role="main">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="hero-content">
+                <h1 id="hero-heading">You Are Not Alone</h1>
+                <p class="hero-subtitle">Find Support, Resources, and Hope</p>
+                <div class="hero-buttons">
+                    <a href="resources.html" class="btn btn-primary">Get Help Now</a>
+                    <a href="tel:1-800-799-7233" class="btn btn-secondary">Call Hotline</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Understanding Domestic Violence -->
+        <section class="content-section" aria-labelledby="understanding-heading">
+            <div class="container">
+                <h2 id="understanding-heading">Understanding Domestic Violence</h2>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="card-icon">📖</div>
+                        <h3>What Is Domestic Violence?</h3>
+                        <p>Domestic violence (also called intimate partner violence, domestic abuse, or relationship abuse) is a pattern of behaviors used by one partner to maintain power and control over another partner in an intimate relationship.</p>
+                        <p>Domestic violence does not discriminate. It affects people of all ages, economic backgrounds, education levels, races, religions, genders, and sexual orientations.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="card-icon">⚠️</div>
+                        <h3>Forms of Abuse</h3>
+                        <ul class="abuse-types">
+                            <li><strong>Physical Abuse:</strong> Hitting, slapping, kicking, restraining, or any unwanted physical contact</li>
+                            <li><strong>Emotional/Psychological Abuse:</strong> Intimidation, manipulation, humiliation, isolation</li>
+                            <li><strong>Sexual Abuse:</strong> Any non-consensual sexual activity or coercion</li>
+                            <li><strong>Economic Abuse:</strong> Controlling finances, preventing employment, sabotaging work</li>
+                            <li><strong>Digital Abuse:</strong> Using technology to harass, stalk, or control</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="card-icon">💡</div>
+                        <h3>Why This Resource Exists</h3>
+                        <p>This website exists to provide accessible, comprehensive, and life-saving information to anyone affected by domestic violence.</p>
+                        <p>Whether you're experiencing abuse, supporting a loved one, or seeking to educate yourself, you'll find:</p>
+                        <ul>
+                            <li>24/7 crisis hotlines and emergency resources</li>
+                            <li>Information about recognizing abuse patterns</li>
+                            <li>Statistics and research to understand the scope</li>
+                            <li>Local Idaho resources and national support services</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Resources Preview -->
+        <section class="cta-section" aria-labelledby="emergency-heading">
+            <div class="container">
+                <h2 id="emergency-heading">In Crisis? You Can Get Help Right Now</h2>
+                <div class="emergency-grid">
+                    <div class="emergency-card">
+                        <h3>National Domestic Violence Hotline</h3>
+                        <p class="large-number">1-800-799-7233</p>
+                        <p>Available 24/7 | Confidential | Free</p>
+                        <a href="tel:1-800-799-7233" class="btn btn-emergency">Call Now</a>
+                    </div>
+                    <div class="emergency-card">
+                        <h3>Text Support</h3>
+                        <p class="large-number">Text START to 88788</p>
+                        <p>Available 24/7 | Anonymous | Crisis counseling</p>
+                        <a href="sms:88788&body=START" class="btn btn-emergency">Text Now</a>
+                    </div>
+                    <div class="emergency-card">
+                        <h3>Emergency Services</h3>
+                        <p class="large-number">911</p>
+                        <p>Immediate danger | Police response</p>
+                        <a href="tel:911" class="btn btn-emergency">Call 911</a>
+                    </div>
+                </div>
+                <p class="cta-footer">
+                    <a href="resources.html" class="link-arrow">View All Resources →</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Disclaimer -->
+        <section class="disclaimer" role="contentinfo" aria-labelledby="disclaimer-heading">
+            <div class="container">
+                <h2 id="disclaimer-heading">Important Disclaimer</h2>
+                <p><strong>This website is for informational purposes only and is not a substitute for professional help.</strong></p>
+                <p>If you or someone you know is in immediate danger, please call 911 or your local emergency services. The information provided on this site is intended to be educational and supportive, but it should not replace advice from qualified professionals including law enforcement, medical personnel, therapists, or legal advisors.</p>
+                <p>We strive to keep all resource links current and accurate, but organizations may change contact information or services. Please verify critical information directly with service providers.</p>
+                <p class="privacy-note"><strong>Privacy & Safety:</strong> If you're in an unsafe situation, please use private browsing mode and remember to clear your browser history. Use the Quick Exit button at the top of any page to immediately leave this site.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="resources.html">All Resources</a></li>
+                        <li><a href="resources.html#idaho">Idaho Resources</a></li>
+                        <li><a href="resources.html#national">National Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><a href="signs.html">Signs & Symptoms</a></li>
+                        <li><a href="stats.html">Statistics</a></li>
+                        <li><a href="index.html">About This Site</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Emergency</h3>
+                    <ul>
+                        <li><a href="tel:911">Call 911</a></li>
+                        <li><a href="tel:1-800-799-7233">National Hotline: 1-800-799-7233</a></li>
+                        <li><a href="sms:88788&body=START">Text: 88788</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Stay Safe Online</h3>
+                    <p class="footer-safety">Clear your browser history after visiting. Use private/incognito mode when possible.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Domestic Violence Resources. Information is educational only.</p>
+                <p class="footer-links">
+                    <button id="quickExitFooter" class="footer-exit">Quick Exit</button>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="accessibility-widget.js"></script>
+</body>
+</html>

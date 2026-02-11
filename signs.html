@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Recognize the warning signs and symptoms of domestic violence and abuse in relationships.">
+    <title>Signs & Symptoms - Domestic Violence Resources</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Quick Exit Button -->
+    <button id="quickExit" class="quick-exit-btn" aria-label="Quick exit to Google">
+        <span class="exit-icon">⚠</span> Quick Exit
+    </button>
+
+    <!-- Accessibility Widget -->
+    <div id="accessibilityWidget" class="accessibility-widget" role="complementary" aria-label="Accessibility controls">
+        <button class="widget-handle" aria-label="Drag to move accessibility widget">
+            <span class="handle-icon">♿</span>
+        </button>
+        <div class="widget-content">
+            <h3>Accessibility</h3>
+            <div class="widget-controls">
+                <button id="increaseFontBtn" aria-label="Increase font size">A+</button>
+                <button id="decreaseFontBtn" aria-label="Decrease font size">A-</button>
+                <button id="toggleContrastBtn" aria-label="Toggle high contrast">
+                    <span class="contrast-icon">◐</span> Contrast
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header/Navigation -->
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html" aria-label="Home">DV Resources</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="signs.html" class="active" aria-current="page">Signs & Symptoms</a></li>
+                    <li><a href="stats.html">Statistics</a></li>
+                </ul>
+                <div class="emergency-number">
+                    <a href="tel:1-800-799-7233" class="emergency-link">
+                        <span class="phone-icon">📞</span> 1-800-799-7233
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main role="main">
+        <!-- Page Header -->
+        <section class="page-header" aria-labelledby="page-title">
+            <div class="container">
+                <h1 id="page-title">Recognizing Abuse: Signs & Symptoms</h1>
+                <p class="page-subtitle">Understanding the warning signs can help you or someone you love get to safety</p>
+            </div>
+        </section>
+
+        <!-- Introduction -->
+        <section class="content-section" aria-labelledby="intro-heading">
+            <div class="container">
+                <div class="intro-box">
+                    <h2 id="intro-heading">Is It Abuse?</h2>
+                    <p>Domestic violence doesn't always leave visible bruises. Abuse takes many forms—physical, emotional, sexual, financial, and digital. The core of all abuse is power and control: one partner using various tactics to dominate and manipulate the other.</p>
+                    <p><strong>If you're questioning whether your relationship is abusive, trust your instincts.</strong> You deserve to feel safe, respected, and valued in all your relationships.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Types of Abuse -->
+        <section class="content-section alternate-bg" aria-labelledby="types-heading">
+            <div class="container">
+                <h2 id="types-heading">Types of Abuse</h2>
+                
+                <div class="abuse-types-grid">
+                    <!-- Physical Abuse -->
+                    <article class="abuse-type-card">
+                        <div class="abuse-icon">🤕</div>
+                        <h3>Physical Abuse</h3>
+                        <p class="type-description">Any intentional use of physical force with the intent to cause harm or fear.</p>
+                        <h4>Warning Signs:</h4>
+                        <ul class="signs-list">
+                            <li>Hitting, slapping, punching, kicking, or biting</li>
+                            <li>Strangling or choking</li>
+                            <li>Pushing, shoving, or grabbing</li>
+                            <li>Using weapons to threaten or harm</li>
+                            <li>Restraining you or preventing you from leaving</li>
+                            <li>Throwing objects at you or near you</li>
+                            <li>Driving recklessly to frighten you</li>
+                            <li>Forcing you to use drugs or alcohol</li>
+                            <li>Denying medical care or medication</li>
+                        </ul>
+                    </article>
+
+                    <!-- Emotional/Psychological Abuse -->
+                    <article class="abuse-type-card">
+                        <div class="abuse-icon">🧠</div>
+                        <h3>Emotional & Psychological Abuse</h3>
+                        <p class="type-description">Behaviors intended to undermine your self-worth and emotional wellbeing.</p>
+                        <h4>Warning Signs:</h4>
+                        <ul class="signs-list">
+                            <li>Constant criticism, insults, or name-calling</li>
+                            <li>Humiliation in private or public</li>
+                            <li>Blaming you for their abusive behavior</li>
+                            <li>Gaslighting (making you doubt your reality)</li>
+                            <li>Threatening to harm you, themselves, or loved ones</li>
+                            <li>Threatening to take away children</li>
+                            <li>Isolating you from family and friends</li>
+                            <li>Monitoring your activities and whereabouts</li>
+                            <li>Extreme jealousy or possessiveness</li>
+                            <li>Destroying your belongings</li>
+                            <li>Harming or threatening pets</li>
+                        </ul>
+                    </article>
+
+                    <!-- Sexual Abuse -->
+                    <article class="abuse-type-card">
+                        <div class="abuse-icon">🚫</div>
+                        <h3>Sexual Abuse</h3>
+                        <p class="type-description">Any sexual activity without clear, voluntary consent.</p>
+                        <h4>Warning Signs:</h4>
+                        <ul class="signs-list">
+                            <li>Forcing or coercing sexual activity</li>
+                            <li>Demanding sex when you're unwilling</li>
+                            <li>Causing pain during sex deliberately</li>
+                            <li>Refusing to use contraception or protection</li>
+                            <li>Reproductive coercion (controlling birth control)</li>
+                            <li>Sharing intimate images without consent</li>
+                            <li>Making you perform sexual acts you're uncomfortable with</li>
+                            <li>Attacking sexual parts of your body</li>
+                            <li>Treating you as a sexual object</li>
+                        </ul>
+                    </article>
+
+                    <!-- Economic/Financial Abuse -->
+                    <article class="abuse-type-card">
+                        <div class="abuse-icon">💰</div>
+                        <h3>Economic & Financial Abuse</h3>
+                        <p class="type-description">Controlling finances to create dependency and limit freedom.</p>
+                        <h4>Warning Signs:</h4>
+                        <ul class="signs-list">
+                            <li>Controlling all money and giving you an "allowance"</li>
+                            <li>Preventing you from working or sabotaging your job</li>
+                            <li>Stealing your money or refusing to contribute</li>
+                            <li>Hiding financial information from you</li>
+                            <li>Running up debt in your name</li>
+                            <li>Refusing to let you access bank accounts</li>
+                            <li>Forcing you to work without fair compensation</li>
+                            <li>Making you account for every penny spent</li>
+                            <li>Destroying your credit score</li>
+                        </ul>
+                    </article>
+
+                    <!-- Digital Abuse -->
+                    <article class="abuse-type-card">
+                        <div class="abuse-icon">📱</div>
+                        <h3>Digital Abuse</h3>
+                        <p class="type-description">Using technology to harass, stalk, or control you.</p>
+                        <h4>Warning Signs:</h4>
+                        <ul class="signs-list">
+                            <li>Demanding passwords to your accounts</li>
+                            <li>Constantly checking your phone, emails, or social media</li>
+                            <li>Using GPS or apps to track your location</li>
+                            <li>Sending threatening or harassing messages</li>
+                            <li>Posting embarrassing information online</li>
+                            <li>Sharing intimate images without permission</li>
+                            <li>Impersonating you online</li>
+                            <li>Controlling who you can contact online</li>
+                            <li>Using spyware or monitoring software</li>
+                        </ul>
+                    </article>
+
+                    <!-- Stalking -->
+                    <article class="abuse-type-card">
+                        <div class="abuse-icon">👁️</div>
+                        <h3>Stalking</h3>
+                        <p class="type-description">Repeated, unwanted attention that causes fear or concern for safety.</p>
+                        <h4>Warning Signs:</h4>
+                        <ul class="signs-list">
+                            <li>Following you or showing up uninvited</li>
+                            <li>Watching your home, work, or school</li>
+                            <li>Sending unwanted gifts or messages</li>
+                            <li>Creating fake profiles to contact you</li>
+                            <li>Gathering information through others</li>
+                            <li>Making unwanted phone calls</li>
+                            <li>Vandalizing your property</li>
+                            <li>Threatening you or your loved ones</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Red Flags in Relationships -->
+        <section class="content-section" aria-labelledby="red-flags-heading">
+            <div class="container">
+                <h2 id="red-flags-heading">Early Warning Signs: Red Flags</h2>
+                <p class="section-intro">Abusive behavior often escalates over time. Recognizing early warning signs can help you make informed decisions about your safety.</p>
+                
+                <div class="red-flags-grid">
+                    <div class="red-flag-card">
+                        <h3>🚩 Intense Relationship Progression</h3>
+                        <p>Rushing the relationship, wanting commitment very quickly, declaring love excessively early, or pressuring you to move in together.</p>
+                    </div>
+                    
+                    <div class="red-flag-card">
+                        <h3>🚩 Jealousy & Possessiveness</h3>
+                        <p>Extreme jealousy disguised as love, accusing you of cheating without reason, or getting angry when you spend time with others.</p>
+                    </div>
+                    
+                    <div class="red-flag-card">
+                        <h3>🚩 Controlling Behavior</h3>
+                        <p>Dictating what you wear, who you see, where you go, or how you spend your time. Needing to know your whereabouts at all times.</p>
+                    </div>
+                    
+                    <div class="red-flag-card">
+                        <h3>🚩 Isolation from Support System</h3>
+                        <p>Actively working to separate you from family and friends, criticizing your loved ones, or making it difficult to maintain relationships.</p>
+                    </div>
+                    
+                    <div class="red-flag-card">
+                        <h3>🚩 Blaming Others</h3>
+                        <p>Never taking responsibility for their actions, always blaming you or others for their problems, or making excuses for their behavior.</p>
+                    </div>
+                    
+                    <div class="red-flag-card">
+                        <h3>🚩 Explosive Temper</h3>
+                        <p>Unpredictable mood swings, overreacting to minor issues, rage that seems out of proportion, or "walking on eggshells" around them.</p>
+                    </div>
+                    
+                    <div class="red-flag-card">
+                        <h3>🚩 Disrespect</h3>
+                        <p>Putting you down, making fun of you, dismissing your feelings or opinions, or treating you as inferior.</p>
+                    </div>
+                    
+                    <div class="red-flag-card">
+                        <h3>🚩 Pressure for Sex</h3>
+                        <p>Not respecting your boundaries, pressuring you into sexual activity, or making you feel guilty for saying no.</p>
+                    </div>
+                    
+                    <div class="red-flag-card">
+                        <h3>🚩 Past Abusive Behavior</h3>
+                        <p>History of abusive relationships, blaming past partners for everything, or having a reputation for being violent.</p>
+                    </div>
+                    
+                    <div class="red-flag-card">
+                        <h3>🚩 Cruelty to Animals or Children</h3>
+                        <p>Harming, threatening, or showing callousness toward animals or children—strong predictor of violence toward humans.</p>
+                    </div>
+                    
+                    <div class="red-flag-card">
+                        <h3>🚩 Substance Abuse</h3>
+                        <p>Heavy drinking or drug use, particularly if it leads to aggressive or unpredictable behavior.</p>
+                    </div>
+                    
+                    <div class="red-flag-card">
+                        <h3>🚩 Threats of Violence</h3>
+                        <p>Any threat of physical harm toward you, themselves, or others should always be taken seriously.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- If You're Being Abused -->
+        <section class="content-section cta-section" aria-labelledby="help-heading">
+            <div class="container">
+                <h2 id="help-heading">If You Recognize These Signs</h2>
+                <div class="help-grid">
+                    <div class="help-card">
+                        <h3>You're Not Alone</h3>
+                        <p>Millions of people experience domestic violence. It's not your fault, and you deserve support.</p>
+                    </div>
+                    <div class="help-card">
+                        <h3>Help Is Available</h3>
+                        <p>Trained advocates are available 24/7 to provide confidential support and help you create a safety plan.</p>
+                        <a href="resources.html" class="btn btn-primary">Find Resources</a>
+                    </div>
+                    <div class="help-card">
+                        <h3>Trust Your Instincts</h3>
+                        <p>If something feels wrong in your relationship, it probably is. Your feelings are valid.</p>
+                    </div>
+                </div>
+                
+                <div class="emergency-contact-box">
+                    <h3>Get Help Right Now</h3>
+                    <div class="emergency-buttons">
+                        <a href="tel:1-800-799-7233" class="btn btn-emergency">Call Hotline: 1-800-799-7233</a>
+                        <a href="sms:88788&body=START" class="btn btn-emergency">Text START to 88788</a>
+                        <a href="tel:911" class="btn btn-emergency">Emergency: 911</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Helping Someone Else -->
+        <section class="content-section alternate-bg" aria-labelledby="helping-heading">
+            <div class="container">
+                <h2 id="helping-heading">Helping Someone You Care About</h2>
+                <p class="section-intro">If you suspect someone you know is being abused, your support can make a life-saving difference.</p>
+                
+                <div class="two-column-grid">
+                    <div class="column">
+                        <h3>✅ Do:</h3>
+                        <ul class="do-list">
+                            <li>Listen without judgment</li>
+                            <li>Believe them and validate their feelings</li>
+                            <li>Express concern for their safety</li>
+                            <li>Offer specific help (childcare, transportation, etc.)</li>
+                            <li>Help them create a safety plan</li>
+                            <li>Provide resource information</li>
+                            <li>Continue to stay in touch and show support</li>
+                            <li>Respect their decisions and timeline</li>
+                            <li>Call 911 if they're in immediate danger</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3>❌ Don't:</h3>
+                        <ul class="dont-list">
+                            <li>Pressure them to leave before they're ready</li>
+                            <li>Judge or criticize their decisions</li>
+                            <li>Give ultimatums</li>
+                            <li>Confront the abuser</li>
+                            <li>Blame the victim</li>
+                            <li>Tell them what to do</li>
+                            <li>Minimize the abuse or make excuses for the abuser</li>
+                            <li>Share their situation without permission</li>
+                            <li>Stop being there if they stay</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Disclaimer -->
+        <section class="disclaimer" role="contentinfo" aria-labelledby="disclaimer-heading">
+            <div class="container">
+                <h2 id="disclaimer-heading">Important Disclaimer</h2>
+                <p><strong>This website is for informational purposes only and is not a substitute for professional help.</strong></p>
+                <p>If you or someone you know is in immediate danger, please call 911 or your local emergency services. The information provided on this site is intended to be educational and supportive, but it should not replace advice from qualified professionals including law enforcement, medical personnel, therapists, or legal advisors.</p>
+                <p>We strive to keep all resource links current and accurate, but organizations may change contact information or services. Please verify critical information directly with service providers.</p>
+                <p class="privacy-note"><strong>Privacy & Safety:</strong> If you're in an unsafe situation, please use private browsing mode and remember to clear your browser history. Use the Quick Exit button at the top of any page to immediately leave this site.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="resources.html">All Resources</a></li>
+                        <li><a href="resources.html#idaho">Idaho Resources</a></li>
+                        <li><a href="resources.html#national">National Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><a href="signs.html">Signs & Symptoms</a></li>
+                        <li><a href="stats.html">Statistics</a></li>
+                        <li><a href="index.html">About This Site</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Emergency</h3>
+                    <ul>
+                        <li><a href="tel:911">Call 911</a></li>
+                        <li><a href="tel:1-800-799-7233">National Hotline: 1-800-799-7233</a></li>
+                        <li><a href="sms:88788&body=START">Text: 88788</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Stay Safe Online</h3>
+                    <p class="footer-safety">Clear your browser history after visiting. Use private/incognito mode when possible.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Domestic Violence Resources. Information is educational only.</p>
+                <p class="footer-links">
+                    <button id="quickExitFooter" class="footer-exit">Quick Exit</button>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="accessibility-widget.js"></script>
+</body>
+</html>

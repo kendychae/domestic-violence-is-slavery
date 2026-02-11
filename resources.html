@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive list of domestic violence resources including Idaho local services and national hotlines.">
+    <title>Resources - Domestic Violence Resources</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Quick Exit Button -->
+    <button id="quickExit" class="quick-exit-btn" aria-label="Quick exit to Google">
+        <span class="exit-icon">⚠</span> Quick Exit
+    </button>
+
+    <!-- Accessibility Widget -->
+    <div id="accessibilityWidget" class="accessibility-widget" role="complementary" aria-label="Accessibility controls">
+        <button class="widget-handle" aria-label="Drag to move accessibility widget">
+            <span class="handle-icon">♿</span>
+        </button>
+        <div class="widget-content">
+            <h3>Accessibility</h3>
+            <div class="widget-controls">
+                <button id="increaseFontBtn" aria-label="Increase font size">A+</button>
+                <button id="decreaseFontBtn" aria-label="Decrease font size">A-</button>
+                <button id="toggleContrastBtn" aria-label="Toggle high contrast">
+                    <span class="contrast-icon">◐</span> Contrast
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header/Navigation -->
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html" aria-label="Home">DV Resources</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resources.html" class="active" aria-current="page">Resources</a></li>
+                    <li><a href="signs.html">Signs & Symptoms</a></li>
+                    <li><a href="stats.html">Statistics</a></li>
+                </ul>
+                <div class="emergency-number">
+                    <a href="tel:1-800-799-7233" class="emergency-link">
+                        <span class="phone-icon">📞</span> 1-800-799-7233
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main role="main">
+        <!-- Page Header -->
+        <section class="page-header" aria-labelledby="page-title">
+            <div class="container">
+                <h1 id="page-title">Resources & Support Services</h1>
+                <p class="page-subtitle">Find immediate help, support services, and advocacy organizations</p>
+            </div>
+        </section>
+
+        <!-- National Resources -->
+        <section id="national" class="content-section" aria-labelledby="national-heading">
+            <div class="container">
+                <h2 id="national-heading">National Resources</h2>
+                
+                <div class="resource-list">
+                    <!-- National Hotline -->
+                    <article class="resource-card featured">
+                        <div class="resource-header">
+                            <h3>National Domestic Violence Hotline</h3>
+                            <span class="badge">24/7</span>
+                        </div>
+                        <div class="resource-content">
+                            <p><strong>Phone:</strong> <a href="tel:1-800-799-7233">1-800-799-SAFE (7233)</a></p>
+                            <p><strong>TTY:</strong> <a href="tel:1-800-787-3224">1-800-787-3224</a></p>
+                            <p><strong>Text:</strong> Text START to <a href="sms:88788&body=START">88788</a></p>
+                            <p><strong>Website:</strong> <a href="https://www.thehotline.org" target="_blank" rel="noopener noreferrer">thehotline.org</a></p>
+                            <p class="resource-description">Free, confidential support 24/7 in over 200 languages. Trained advocates available to provide crisis intervention, safety planning, and referrals to local resources.</p>
+                        </div>
+                    </article>
+
+                    <!-- RAINN -->
+                    <article class="resource-card">
+                        <div class="resource-header">
+                            <h3>RAINN (Rape, Abuse & Incest National Network)</h3>
+                            <span class="badge">24/7</span>
+                        </div>
+                        <div class="resource-content">
+                            <p><strong>Hotline:</strong> <a href="tel:1-800-656-4673">1-800-656-HOPE (4673)</a></p>
+                            <p><strong>Online Chat:</strong> <a href="https://hotline.rainn.org/online" target="_blank" rel="noopener noreferrer">hotline.rainn.org/online</a></p>
+                            <p><strong>Website:</strong> <a href="https://www.rainn.org" target="_blank" rel="noopener noreferrer">rainn.org</a></p>
+                            <p class="resource-description">National Sexual Assault Hotline providing support for survivors of sexual violence and their loved ones.</p>
+                        </div>
+                    </article>
+
+                    <!-- National Coalition Against Domestic Violence -->
+                    <article class="resource-card">
+                        <div class="resource-header">
+                            <h3>National Coalition Against Domestic Violence (NCADV)</h3>
+                        </div>
+                        <div class="resource-content">
+                            <p><strong>Phone:</strong> <a href="tel:1-303-839-1852">1-303-839-1852</a></p>
+                            <p><strong>Website:</strong> <a href="https://ncadv.org" target="_blank" rel="noopener noreferrer">ncadv.org</a></p>
+                            <p class="resource-description">Leading organization working to end domestic violence through advocacy, public policy, and community resources.</p>
+                        </div>
+                    </article>
+
+                    <!-- Love Is Respect -->
+                    <article class="resource-card">
+                        <div class="resource-header">
+                            <h3>Love Is Respect (Teen Dating Abuse)</h3>
+                            <span class="badge">24/7</span>
+                        </div>
+                        <div class="resource-content">
+                            <p><strong>Phone:</strong> <a href="tel:1-866-331-9474">1-866-331-9474</a></p>
+                            <p><strong>Text:</strong> Text LOVEIS to <a href="sms:22522&body=LOVEIS">22522</a></p>
+                            <p><strong>Online Chat:</strong> <a href="https://www.loveisrespect.org" target="_blank" rel="noopener noreferrer">loveisrespect.org</a></p>
+                            <p class="resource-description">Specialized resource for teens and young adults facing dating abuse and unhealthy relationships.</p>
+                        </div>
+                    </article>
+
+                    <!-- National Resource Center on Domestic Violence -->
+                    <article class="resource-card">
+                        <div class="resource-header">
+                            <h3>National Resource Center on Domestic Violence</h3>
+                        </div>
+                        <div class="resource-content">
+                            <p><strong>Phone:</strong> <a href="tel:1-800-537-2238">1-800-537-2238</a></p>
+                            <p><strong>Website:</strong> <a href="https://nrcdv.org" target="_blank" rel="noopener noreferrer">nrcdv.org</a></p>
+                            <p class="resource-description">Comprehensive information and tools for advocates, practitioners, and communities addressing domestic violence.</p>
+                        </div>
+                    </article>
+
+                    <!-- StrongHearts Native Helpline -->
+                    <article class="resource-card">
+                        <div class="resource-header">
+                            <h3>StrongHearts Native Helpline</h3>
+                            <span class="badge">7am-10pm CT</span>
+                        </div>
+                        <div class="resource-content">
+                            <p><strong>Phone:</strong> <a href="tel:1-844-762-8483">1-844-7NATIVE (762-8483)</a></p>
+                            <p><strong>Online Chat:</strong> <a href="https://strongheartshelpline.org" target="_blank" rel="noopener noreferrer">strongheartshelpline.org</a></p>
+                            <p class="resource-description">Culturally-appropriate support for Native Americans and Alaska Natives affected by domestic and sexual violence.</p>
+                        </div>
+                    </article>
+
+                    <!-- National Center on Domestic Violence, Trauma & Mental Health -->
+                    <article class="resource-card">
+                        <div class="resource-header">
+                            <h3>National Center on Domestic Violence, Trauma & Mental Health</h3>
+                        </div>
+                        <div class="resource-content">
+                            <p><strong>Phone:</strong> <a href="tel:1-312-726-7020">1-312-726-7020</a></p>
+                            <p><strong>Website:</strong> <a href="https://www.nationalcenterdvtraumamh.org" target="_blank" rel="noopener noreferrer">nationalcenterdvtraumamh.org</a></p>
+                            <p class="resource-description">Resources addressing the intersection of domestic violence, trauma, and mental health.</p>
+                        </div>
+                    </article>
+
+                    <!-- National Suicide Prevention Lifeline -->
+                    <article class="resource-card">
+                        <div class="resource-header">
+                            <h3>988 Suicide & Crisis Lifeline</h3>
+                            <span class="badge">24/7</span>
+                        </div>
+                        <div class="resource-content">
+                            <p><strong>Dial:</strong> <a href="tel:988">988</a></p>
+                            <p><strong>Phone:</strong> <a href="tel:1-800-273-8255">1-800-273-TALK (8255)</a></p>
+                            <p><strong>Text:</strong> Text 988</p>
+                            <p><strong>Website:</strong> <a href="https://988lifeline.org" target="_blank" rel="noopener noreferrer">988lifeline.org</a></p>
+                            <p class="resource-description">Free, confidential crisis support for anyone experiencing suicidal thoughts or emotional distress.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Idaho Resources -->
+        <section id="idaho" class="content-section alternate-bg" aria-labelledby="idaho-heading">
+            <div class="container">
+                <h2 id="idaho-heading">Idaho Resources</h2>
+                
+                <div class="resource-list">
+                    <!-- Idaho Coalition Against Sexual & Domestic Violence -->
+                    <article class="resource-card featured">
+                        <div class="resource-header">
+                            <h3>Idaho Coalition Against Sexual & Domestic Violence</h3>
+                        </div>
+                        <div class="resource-content">
+                            <p><strong>Phone:</strong> <a href="tel:1-208-384-0419">1-208-384-0419</a></p>
+                            <p><strong>Toll-Free:</strong> <a href="tel:1-888-293-6118">1-888-293-6118</a></p>
+                            <p><strong>Website:</strong> <a href="https://idvsa.org" target="_blank" rel="noopener noreferrer">idvsa.org</a></p>
+                            <p class="resource-description">Statewide coalition providing advocacy, training, and connecting survivors to local services throughout Idaho.</p>
+                        </div>
+                    </article>
+
+                    <!-- WCA (Women's and Children's Alliance) - Boise -->
+                    <article class="resource-card">
+                        <div class="resource-header">
+                            <h3>Women's and Children's Alliance (Boise)</h3>
+                            <span class="badge">24/7 Hotline</span>
+                        </div>
+                        <div class="resource-content">
+                            <p><strong>24-Hour Crisis Line:</strong> <a href="tel:1-208-343-7025">1-208-343-7025</a></p>
+                            <p><strong>Office:</strong> <a href="tel:1-208-343-3688">1-208-343-3688</a></p>
+                            <p><strong>Website:</strong> <a href="https://wcaboise.org" target="_blank" rel="noopener noreferrer">wcaboise.org</a></p>
+                            <p class="resource-description">Emergency shelter, advocacy, legal services, and counseling for survivors in the Boise area.</p>
+                        </div>
+                    </article>
+
+                    <!-- FACES (Family Advocacy and Community Education Services) -->
+                    <article class="resource-card">
+                        <div class="resource-header">
+                            <h3>FACES - Family Advocacy and Community Education Services (Idaho Falls)</h3>
+                            <span class="badge">24/7 Hotline</span>
+                        </div>
+                        <div class="resource-content">
+                            <p><strong>24-Hour Crisis Line:</strong> <a href="tel:1-208-529-4352">1-208-529-4352</a></p>
+                            <p><strong>Office:</strong> <a href="tel:1-208-524-5257">1-208-524-5257</a></p>
+                            <p><strong>Website:</strong> <a href="https://facesidaho.org" target="_blank" rel="noopener noreferrer">facesidaho.org</a></p>
+                            <p class="resource-description">Shelter, advocacy, and support services for domestic violence and sexual assault survivors in Eastern Idaho.</p>
+                        </div>
+                    </article>
+
+                    <!-- Advocates Against Family Violence (Coeur d'Alene) -->
+                    <article class="resource-card">
+                        <div class="resource-header">
+                            <h3>Advocates Against Family Violence (Coeur d'Alene)</h3>
+                            <span class="badge">24/7 Hotline</span>
+                        </div>
+                        <div class="resource-content">
+                            <p><strong>24-Hour Crisis Line:</strong> <a href="tel:1-208-664-9303">1-208-664-9303</a></p>
+                            <p><strong>Office:</strong> <a href="tel:1-208-765-4390">1-208-765-4390</a></p>
+                            <p><strong>Website:</strong> <a href="https://aafv.org" target="_blank" rel="noopener noreferrer">aafv.org</a></p>
+                            <p class="resource-description">Emergency shelter and support services for victims of domestic violence in North Idaho.</p>
+                        </div>
+                    </article>
+
+                    <!-- South Valley Sanctuary (Twin Falls) -->
+                    <article class="resource-card">
+                        <div class="resource-header">
+                            <h3>South Valley Sanctuary (Twin Falls)</h3>
+                            <span class="badge">24/7 Hotline</span>
+                        </div>
+                        <div class="resource-content">
+                            <p><strong>24-Hour Crisis Line:</strong> <a href="tel:1-208-733-0100">1-208-733-0100</a></p>
+                            <p><strong>Website:</strong> <a href="https://www.southvalleysanctuary.org" target="_blank" rel="noopener noreferrer">southvalleysanctuary.org</a></p>
+                            <p class="resource-description">Emergency shelter, advocacy, and support services for survivors in South Central Idaho.</p>
+                        </div>
+                    </article>
+
+                    <!-- Safe Passage (Pocatello) -->
+                    <article class="resource-card">
+                        <div class="resource-header">
+                            <h3>Safe Passage (Pocatello)</h3>
+                            <span class="badge">24/7 Hotline</span>
+                        </div>
+                        <div class="resource-content">
+                            <p><strong>24-Hour Crisis Line:</strong> <a href="tel:1-208-232-0742">1-208-232-0742</a></p>
+                            <p><strong>Office:</strong> <a href="tel:1-208-233-7072">1-208-233-7072</a></p>
+                            <p><strong>Website:</strong> <a href="https://www.safepassageid.org" target="_blank" rel="noopener noreferrer">safepassageid.org</a></p>
+                            <p class="resource-description">Crisis intervention, emergency shelter, and advocacy services in Southeast Idaho.</p>
+                        </div>
+                    </article>
+
+                    <!-- Valley Crisis Center (Lewiston) -->
+                    <article class="resource-card">
+                        <div class="resource-header">
+                            <h3>Valley Crisis Center (Lewiston)</h3>
+                            <span class="badge">24/7 Hotline</span>
+                        </div>
+                        <div class="resource-content">
+                            <p><strong>24-Hour Crisis Line:</strong> <a href="tel:1-208-746-8884">1-208-746-8884</a></p>
+                            <p><strong>Office:</strong> <a href="tel:1-208-743-7851">1-208-743-7851</a></p>
+                            <p><strong>Website:</strong> <a href="https://valleycrisiscenterlc.org" target="_blank" rel="noopener noreferrer">valleycrisiscenterlc.org</a></p>
+                            <p class="resource-description">Crisis hotline, shelter, counseling, and legal advocacy for survivors in North Central Idaho.</p>
+                        </div>
+                    </article>
+
+                    <!-- Idaho Legal Aid Services -->
+                    <article class="resource-card">
+                        <div class="resource-header">
+                            <h3>Idaho Legal Aid Services</h3>
+                        </div>
+                        <div class="resource-content">
+                            <p><strong>Phone:</strong> <a href="tel:1-208-746-7541">1-208-746-7541</a></p>
+                            <p><strong>Toll-Free:</strong> <a href="tel:1-866-345-0106">1-866-345-0106</a></p>
+                            <p><strong>Website:</strong> <a href="https://www.idaholegalaid.org" target="_blank" rel="noopener noreferrer">idaholegalaid.org</a></p>
+                            <p class="resource-description">Free legal services for low-income Idahoans, including help with protection orders and family law matters.</p>
+                        </div>
+                    </article>
+
+                    <!-- CASA: Community Action for Safe Adults (Nampa) -->
+                    <article class="resource-card">
+                        <div class="resource-header">
+                            <h3>CASA: Community Action for Safe Adults (Nampa)</h3>
+                            <span class="badge">24/7 Hotline</span>
+                        </div>
+                        <div class="resource-content">
+                            <p><strong>24-Hour Crisis Line:</strong> <a href="tel:1-208-343-7055">1-208-343-7055</a></p>
+                            <p><strong>Website:</strong> <a href="https://casaofcanyoncounty.org" target="_blank" rel="noopener noreferrer">casaofcanyoncounty.org</a></p>
+                            <p class="resource-description">Emergency shelter, support groups, and advocacy services for survivors in Canyon County.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Disclaimer -->
+        <section class="disclaimer" role="contentinfo" aria-labelledby="disclaimer-heading">
+            <div class="container">
+                <h2 id="disclaimer-heading">Important Disclaimer</h2>
+                <p><strong>This website is for informational purposes only and is not a substitute for professional help.</strong></p>
+                <p>If you or someone you know is in immediate danger, please call 911 or your local emergency services. The information provided on this site is intended to be educational and supportive, but it should not replace advice from qualified professionals including law enforcement, medical personnel, therapists, or legal advisors.</p>
+                <p>We strive to keep all resource links current and accurate, but organizations may change contact information or services. Please verify critical information directly with service providers.</p>
+                <p class="privacy-note"><strong>Privacy & Safety:</strong> If you're in an unsafe situation, please use private browsing mode and remember to clear your browser history. Use the Quick Exit button at the top of any page to immediately leave this site.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="resources.html">All Resources</a></li>
+                        <li><a href="resources.html#idaho">Idaho Resources</a></li>
+                        <li><a href="resources.html#national">National Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><a href="signs.html">Signs & Symptoms</a></li>
+                        <li><a href="stats.html">Statistics</a></li>
+                        <li><a href="index.html">About This Site</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Emergency</h3>
+                    <ul>
+                        <li><a href="tel:911">Call 911</a></li>
+                        <li><a href="tel:1-800-799-7233">National Hotline: 1-800-799-7233</a></li>
+                        <li><a href="sms:88788&body=START">Text: 88788</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Stay Safe Online</h3>
+                    <p class="footer-safety">Clear your browser history after visiting. Use private/incognito mode when possible.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Domestic Violence Resources. Information is educational only.</p>
+                <p class="footer-links">
+                    <button id="quickExitFooter" class="footer-exit">Quick Exit</button>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="accessibility-widget.js"></script>
+</body>
+</html>
