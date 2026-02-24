@@ -178,8 +178,7 @@ strong {
     font-weight: 600;
     font-size: 0.95rem;
     cursor: pointer;
-    z-index: 9998;
-    z-index: 10000;
+    z-index: 10001;
     box-shadow: var(--shadow-lg);
     transition: all var(--transition-fast);
     display: flex;
@@ -201,17 +200,20 @@ strong {
 /* ========== UserWay Widget Positioning ========== */
 /* Override UserWay's default positioning to avoid Quick Exit overlap */
 #userway_p1 {
-    top: 110px !important; /* Position well below Quick Exit button */
-    right: 10px !important;
-    bottom: auto !important;
-    z-index: 9997 !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: 20px !important;
+    left: 20px !important;
+    z-index: 9900 !important;
 }
 
 @media (max-width: 768px) {
     #userway_p1 {
-        top: 110px !important;
-        right: 10px !important;
-        z-index: 9997 !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: 20px !important;
+        left: 20px !important;
+        z-index: 9900 !important;
     }
 }
 
@@ -365,15 +367,15 @@ strong {
 
 .security-banner-close {
     position: absolute;
-    top: 5px;
-    right: 5px;
-    background: rgba(255, 255, 255, 0.2);
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.3);
     color: var(--white);
-    border: 2px solid var(--white);
-    width: 40px;
-    height: 40px;
+    border: 3px solid var(--white);
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
     cursor: pointer;
     display: flex;
@@ -382,7 +384,7 @@ strong {
     transition: all var(--transition-fast);
     line-height: 1;
     padding: 0;
-    z-index: 10000;
+    z-index: 10002;
 }
 
 .security-banner-close:hover,
@@ -402,7 +404,7 @@ strong {
     }
     
     .security-banner-content {
-        padding-right: 50px;
+        padding-left: 60px;
     }
     
     .security-banner h2 {
@@ -414,12 +416,12 @@ strong {
     }
     
     .security-banner-close {
-        width: 35px;
-        height: 35px;
-        font-size: 1.3rem;
-        top: 5px;
-        right: 5px;
-        z-index: 10000;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+        top: 10px;
+        left: 10px;
+        z-index: 10002;
     }
 }
 

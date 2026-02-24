@@ -158,12 +158,15 @@ document.addEventListener('DOMContentLoaded', function() {
     let escapeTimer;
     
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
+        if (e.key === 'Escape' || e.key === 'Esc') {
+            console.log('ESC pressed. Current count:', escapeCount);
+            
             // Don't count escape if safety modal is active
             const safetyModal = document.getElementById('safetyModal');
             const securityBanner = document.getElementById('securityBanner');
             
             if (safetyModal && safetyModal.classList.contains('active')) {
+                console.log('Safety modal active - letting modal handle ESC');
                 // Let the modal handle this escape
                 return;
             }
@@ -171,20 +174,25 @@ document.addEventListener('DOMContentLoaded', function() {
             if (securityBanner && securityBanner.classList.contains('active')) {
                 // First escape closes the banner
                 if (escapeCount === 0) {
+                    console.log('Closing security banner on first ESC');
                     securityBanner.classList.remove('active');
+                    document.body.classList.remove('banner-active');
                     sessionStorage.setItem('securityBannerDismissed', 'true');
                 }
             }
             
             escapeCount++;
+            console.log('Escape count incremented to:', escapeCount);
             
             if (escapeCount === 2) {
+                console.log('ESC pressed 2 times - triggering Quick Exit!');
                 quickExit();
             }
             
             // Reset counter after 1 second
             clearTimeout(escapeTimer);
             escapeTimer = setTimeout(function() {
+                console.log('Resetting escape count to 0');
                 escapeCount = 0;
             }, 1000);
         }
