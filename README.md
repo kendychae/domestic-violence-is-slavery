@@ -2,24 +2,477 @@
 
 A comprehensive, accessible, and survivor-centered website providing critical information and resources for individuals experiencing domestic violence. This site adheres to modern web standards, WCAG accessibility guidelines, and trauma-informed design principles.
 
-## 🚨 Important Legal Disclaimer
+---
 
-**THIS WEBSITE IS FOR INFORMATIONAL AND EDUCATIONAL PURPOSES ONLY**
+## ⚖️ Copyright & Intellectual Property
 
-- This website does **not** provide emergency services, legal advice, medical advice, or professional counseling
-- If you or someone you know is in **immediate danger**, call **911** or your local emergency services
-- The information provided should **not replace** consultation with qualified professionals including law enforcement, medical personnel, licensed therapists, domestic violence advocates, or legal advisors
-- Resource availability, phone numbers, and service details may change; always verify current information directly with service providers
-- We make every effort to maintain accurate information, but we cannot guarantee the completeness, accuracy, or timeliness of all content
-- Use of this website does not establish any professional relationship with the creators or contributors
+**Copyright © 2026 Domestic Violence Resources Project. All Rights Reserved.**
 
-**Privacy & Safety:** If you are in an unsafe situation, please use private/incognito browsing mode and clear your browser history after visiting. Use the **Quick Exit** button to immediately leave the site.
+This website, including all design elements, original content, code, graphics, compilation, digital conversion, and other materials, is protected by United States and international copyright laws. The website is owned and operated by the Domestic Violence Resources Project.
+
+### Rights Reserved
+
+Unless explicitly stated otherwise, all content on this website is proprietary and protected. Unauthorized use, reproduction, distribution, or modification of any materials from this website without prior written permission is strictly prohibited and may violate copyright, trademark, and other intellectual property laws.
+
+### Limited License for Personal Use
+
+You are granted a limited, non-exclusive, non-transferable license to access and use this website solely for personal, non-commercial purposes related to domestic violence awareness, education, and support. This license does not include any right to:
+
+- Reproduce, duplicate, copy, sell, resell, or exploit any portion of the website
+- Mirror or frame the website on any other server or device
+- Modify, adapt, translate, reverse engineer, or create derivative works
+- Remove or alter any copyright, trademark, or other proprietary notices
+- Use automated systems (bots, scrapers) to access the website
+
+### Permitted Uses
+
+The following uses are permitted without prior authorization:
+
+1. **Educational Use**: Teachers, counselors, and advocates may share links to this website or display pages in educational settings
+2. **Personal Safety**: Individuals may print or save pages for personal safety planning purposes
+3. **Link Sharing**: You may link to the homepage or specific pages of this website
+4. **Fair Use**: Brief quotations with proper attribution for commentary, criticism, news reporting, or research
+
+### Attribution Requirements
+
+When referencing or quoting content from this website, proper attribution must include:
+
+- The website name: "Domestic Violence Resources"
+- The URL of the specific page referenced
+- A copyright notice: "© 2026 Domestic Violence Resources Project"
+- A statement that permission has been granted or that use constitutes fair use
+
+### Third-Party Content
+
+Certain materials on this website are owned by third parties and are used under license or fair use principles:
+
+- **Power and Control Wheel**: © Domestic Abuse Intervention Programs (DAIP), Duluth, Minnesota
+- **Statistics and Data**: © Original sources as cited (CDC, DOJ, NCADV, etc.)
+- **UserWay Widget**: © UserWay Inc.
+
+Any use of third-party content must comply with the original owner's terms and conditions.
+
+---
+
+## 🚨 Legal Disclaimer & Limitation of Liability
+
+**PLEASE READ THIS DISCLAIMER CAREFULLY BEFORE USING THIS WEBSITE**
+
+### Information Purposes Only
+
+THIS WEBSITE AND ALL INFORMATION, CONTENT, MATERIALS, AND SERVICES INCLUDED ON OR OTHERWISE MADE AVAILABLE THROUGH THIS WEBSITE ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS FOR INFORMATIONAL AND EDUCATIONAL PURPOSES ONLY.
+
+**This website does not:**
+
+- Provide emergency services or crisis intervention
+- Offer legal, medical, psychological, or professional counseling services
+- Create any attorney-client, doctor-patient, therapist-client, or professional relationship
+- Guarantee the accuracy, completeness, currency, or reliability of any information
+- Replace consultation with qualified professionals or emergency services
+
+### No Professional Relationship
+
+Your use of this website does not establish any professional, therapeutic, legal, or advisory relationship with the website creators, operators, contributors, or any affiliated parties. No advice or information, whether oral or written, obtained from this website shall create any warranty or professional relationship not expressly stated in this disclaimer.
+
+### Emergency Situations
+
+**IF YOU OR SOMEONE YOU KNOW IS IN IMMEDIATE DANGER, CALL 911 OR YOUR LOCAL EMERGENCY SERVICES IMMEDIATELY.**
+
+This website is not equipped to handle emergency situations. Do not rely on this website for emergency assistance. Always contact local emergency services, law enforcement, or crisis hotlines for immediate help.
+
+### Accuracy of Information
+
+While we make reasonable efforts to provide accurate and up-to-date information:
+
+- Resource phone numbers, addresses, and services may change without notice
+- Statistics may become outdated as new research is published
+- Links to external websites may become broken or redirect to different content
+- Information about laws and legal remedies may vary by jurisdiction
+
+**You are responsible for verifying all information with the original sources and service providers before relying on it.**
+
+### Third-Party Resources
+
+This website contains links to external websites and references to third-party services not under our control. We do not endorse, guarantee, or assume responsibility for:
+
+- The accuracy, safety, or appropriateness of any external content
+- The availability or quality of third-party services
+- The privacy practices or policies of external websites
+- Any outcomes resulting from your use of external resources
+
+### Limitation of Liability
+
+TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, THE WEBSITE CREATORS, OPERATORS, CONTRIBUTORS, AND AFFILIATED PARTIES SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM OR RELATED TO:
+
+- Your use of or inability to use this website
+- Any errors, omissions, or inaccuracies in website content
+- Your reliance on information provided on this website
+- Any delays, interruptions, or technical failures
+- Any decisions made based on website information
+- Any harm, injury, or adverse outcomes resulting from use of website resources
+
+This limitation applies regardless of the legal theory (contract, tort, negligence, strict liability, or otherwise) and even if we have been advised of the possibility of such damages.
+
+### Indemnification
+
+You agree to indemnify, defend, and hold harmless the website creators, operators, contributors, and affiliated parties from any claims, damages, losses, liabilities, and expenses (including reasonable attorneys' fees) arising from:
+
+- Your use or misuse of this website
+- Your violation of these terms or any applicable laws
+- Your violation of any third-party rights
+- Any content you submit or transmit through this website
+
+### Jurisdictional Issues
+
+This website is operated from the United States and provides information relevant to U.S. laws and resources. If you access this website from other locations:
+
+- You are responsible for compliance with local laws
+- Information may not be applicable to your jurisdiction
+- Resources referenced may not be available in your area
+- Legal remedies discussed may differ in your location
+
+### Changes to Disclaimer
+
+We reserve the right to modify this disclaimer at any time without prior notice. Your continued use of the website after changes constitutes acceptance of the modified disclaimer. Review this disclaimer periodically for updates.
+
+---
+
+## 🔒 Privacy & Security Notice
+
+### Privacy Commitment
+
+We are committed to protecting the privacy and safety of website visitors, particularly those in vulnerable situations. We understand that visiting a domestic violence resources website may put users at risk.
+
+### No Data Collection
+
+**This website does not:**
+
+- Collect personal information or require registration
+- Use cookies for tracking purposes
+- Install analytics or monitoring scripts
+- Record visitor IP addresses or browsing behavior
+- Share any information with third parties
+- Require email addresses or contact information
+- Store any data about your visit
+
+### External Widget
+
+The UserWay Accessibility Widget is the only third-party integration. It operates independently and has its own privacy policy available at userway.org. You may disable the widget at any time without affecting website functionality.
+
+### Browser History Warning
+
+**IMPORTANT SAFETY INFORMATION:**
+
+Even though this website does not track you, your internet browser keeps a record of websites you visit (browsing history). If you are in an unsafe situation where someone may monitor your device:
+
+1. **Use Private/Incognito Mode**: This prevents your browser from saving history
+   - Chrome: Ctrl+Shift+N (Windows) or Cmd+Shift+N (Mac)
+   - Firefox: Ctrl+Shift+P (Windows) or Cmd+Shift+P (Mac)
+   - Safari: Cmd+Shift+N (Mac)
+   - Edge: Ctrl+Shift+N (Windows)
+
+2. **Clear Your Browser History**: After visiting, manually delete your browsing history
+   - Chrome/Edge: Ctrl+H, then "Clear browsing data"
+   - Firefox: Ctrl+H, then "Clear Recent History"
+   - Safari: History menu > Clear History
+
+3. **Use a Safe Device**: If possible, access this website from:
+   - A public library computer
+   - A friend's device
+   - A work computer (if safe to do so)
+   - A device your abuser cannot access
+
+4. **Be Aware of Monitoring**: Abusers may monitor:
+   - Browser history
+   - Email accounts
+   - Phone records and text messages
+   - Social media activity
+   - Location tracking on phones
+   - Keystroke logging software
+
+### Quick Exit Feature
+
+Every page includes a **Quick Exit** button that immediately redirects to Google. However:
+
+- This does NOT clear your browser history
+- This does NOT prevent device monitoring
+- This is only a quick escape if someone enters the room
+
+**For true privacy, use private browsing mode and clear your history.**
+
+### Secure Connection
+
+This website uses HTTPS encryption to protect data transmission between your browser and our servers. However, HTTPS does not prevent local monitoring on your device.
+
+---
+
+## ♿ Accessibility Compliance Statement
+
+### Commitment to Accessibility
+
+The Domestic Violence Resources Project is committed to ensuring digital accessibility for all people, including those with disabilities. We continuously work to improve the user experience for everyone and apply relevant accessibility standards.
+
+### Conformance Status
+
+This website strives to conform to the **Web Content Accessibility Guidelines (WCAG) 2.1 Level AA**, an internationally recognized standard for web accessibility developed by the World Wide Web Consortium (W3C).
+
+**Current Conformance: Partial Conformance**
+
+"Partial conformance" means that some parts of the website may not yet fully conform to WCAG 2.1 Level AA due to the following limitations:
+
+- Third-party embedded content (UserWay widget) operates independently
+- External linked resources may not meet accessibility standards
+- Real-time interactive elements (counters) may present challenges for some assistive technologies
+
+### Accessibility Features
+
+Our website includes the following accessibility features:
+
+#### Perceivable
+
+- **Text Alternatives**: Descriptive alt text for images and icons
+- **Color Contrast**: Minimum 4.5:1 contrast ratio for normal text, 3:1 for large text
+- **Resizable Text**: Text can be resized up to 200% without loss of functionality
+- **Color Independence**: Information is not conveyed by color alone
+- **Semantic HTML**: Proper heading hierarchy and landmarks
+
+#### Operable
+
+- **Keyboard Navigation**: All functionality accessible via keyboard
+- **No Keyboard Traps**: Users can navigate to and from all page elements
+- **Skip Links**: "Skip to main content" available for screen readers
+- **Focus Indicators**: Visible 3px focus outlines on interactive elements
+- **Sufficient Time**: No time limits on reading or interacting with content
+
+#### Understandable
+
+- **Readable Text**: Plain language, clear fonts (Inter font family)
+- **Predictable Navigation**: Consistent navigation across all pages
+- **Input Assistance**: Clear labels and instructions for interactive elements
+- **Error Prevention**: Confirmation dialogs for critical actions
+
+#### Robust
+
+- **Valid HTML**: Semantic HTML5 markup
+- **ARIA Labels**: Comprehensive labeling for assistive technologies
+- **Cross-Browser Compatible**: Works with major browsers
+- **Assistive Technology Friendly**: Compatible with screen readers (JAWS, NVDA, VoiceOver)
+
+### Assistive Technology Integration
+
+**UserWay Accessibility Widget** is integrated to provide enhanced accessibility features:
+
+- Screen reader optimization
+- Keyboard navigation enhancements
+- Dyslexia-friendly fonts
+- Content highlighting
+- Smart contrast adjustments
+- Cursor size modifications
+- Read aloud text-to-speech
+- And 30+ additional features
+
+### Known Accessibility Issues
+
+We are aware of the following limitations and are working to address them:
+
+1. **Real-Time Counter**: Screen readers may not automatically announce updates to the statistics counter
+2. **Third-Party Links**: External websites may not meet accessibility standards
+3. **PDF Resources** (if added): May require accessible alternatives
+
+### Feedback & Assistance
+
+We welcome feedback on the accessibility of this website. If you encounter accessibility barriers:
+
+- **Technical Issues**: Open an issue on our GitHub repository
+- **Urgent Accessibility Concerns**: Contact us through the accessibility widget feedback option
+- **General Feedback**: We review all accessibility-related suggestions
+
+Please provide:
+
+- The page URL where you encountered the issue
+- A description of the problem
+- The assistive technology you were using (if applicable)
+- Your preferred format for receiving information
+
+### Accessibility Evaluation
+
+This website has been evaluated using:
+
+- **Automated tools**: axe DevTools, WAVE, Lighthouse Accessibility Audits
+- **Manual testing**: Keyboard navigation, screen reader testing
+- **User testing**: Feedback from individuals using assistive technologies
+
+Last Accessibility Review: February 2026
+
+### Third-Party Content
+
+Some content on this website (statistics sources, external resource links) is provided by third parties over whom we have no control. These external sites may not adhere to the same accessibility standards.
+
+### Continuous Improvement
+
+Accessibility is an ongoing effort. We are committed to:
+
+- Regular accessibility audits
+- Implementing user feedback
+- Staying current with WCAG guidelines
+- Training content contributors on accessible practices
+- Prioritizing accessibility in all updates and new features
+
+---
+
+## Crisis Resource Disclaimer
+
+### Nature of Resources
+
+The resources, hotlines, shelters, and services listed on this website are provided for informational purposes only. We do not operate these services, nor do we have any affiliation with or control over them.
+
+### No Endorsement
+
+Inclusion of any organization, hotline, service, or resource on this website does not constitute an endorsement, recommendation, or guarantee of quality. We do not:
+
+- Verify the licensing or credentials of individual service providers
+- Monitor the quality of services provided
+- Guarantee availability of services
+- Assume responsibility for outcomes of your interactions with listed resources
+
+### Verify Before Relying
+
+**You are responsible for:**
+
+- Verifying phone numbers and service availability before calling
+- Confirming services meet your specific needs
+- Checking for updates to contact information
+- Evaluating whether a resource is appropriate for your situation
+- Understanding any costs, eligibility requirements, or limitations
+
+### Resource Changes
+
+Hotlines may change numbers, organizations may close or relocate, and services may be modified without notice to us. While we strive to maintain current information:
+
+- We cannot guarantee accuracy of all listings
+- We may not be immediately aware of changes
+- Updates may occur on a delayed schedule
+
+### Local Variations
+
+Services, legal remedies, and available resources vary significantly by:
+
+- **Location**: State, county, and city laws differ
+- **Funding**: Service availability depends on local funding
+- **Eligibility**: Some programs have residency or income requirements
+- **Capacity**: Shelters and programs may have waiting lists
+
+**Always verify that resources are available and appropriate for your specific location and circumstances.**
+
+### Crisis Situations
+
+**In life-threatening emergencies, call 911 immediately.**
+
+Hotlines and resources listed on this website are not equipped for immediate emergency response. If you are in imminent danger:
+
+1. Call 911 or local emergency services
+2. Get to a safe location
+3. Contact hotlines for follow-up support and safety planning
+
+### Hotline Limitations
+
+Domestic violence hotlines provide crucial support but:
+
+- May experience high call volumes and wait times
+- Cannot physically intervene in emergencies
+- Cannot guarantee anonymity (phone records may be monitored)
+- May be required to report certain situations (e.g., child abuse)
+
+For true crisis situations, always contact law enforcement first.
+
+### No Liability for Third-Party Services
+
+We are not liable for:
+
+- The quality, safety, or outcomes of services received from listed resources
+- Incorrect or outdated information provided by third parties
+- Unavailability of services when needed
+- Actions or omissions of hotline operators, advocates, or service providers
+- Any harm resulting from use of listed resources
+
+Your decision to contact or use any listed resource is at your own discretion and risk.
+
+---
+
+---
+
+## 📝 Content Usage Restrictions
+
+### Commercial Use Prohibited
+
+The content, design, code, and materials on this website are intended solely for educational and advocacy purposes related to domestic violence awareness and support. Commercial use is strictly prohibited without express written permission.
+
+**Prohibited commercial activities include:**
+
+- Selling or licensing website content, code, or design elements
+- Using website materials in for-profit products or services
+- Incorporating website content into paid training or consulting services
+- Using website branding or design for commercial purposes
+- Republishing website content on commercial platforms without authorization
+
+### Restricted Use Cases
+
+Prior written permission is required for:
+
+1. **Large-Scale Distribution**: Publishing or distributing substantial portions of website content to large audiences
+2. **Organizational Use**: Using website content in organizational materials, reports, or publications (beyond fair use)
+3. **Derivative Works**: Creating modified versions or adaptations of the website
+4. **Translation**: Translating the website into other languages for public distribution
+5. **Media Use**: Using website content in films, documentaries, books, or other media
+
+### Acceptable Use Without Permission
+
+You may use this website without prior permission for:
+
+- **Personal reference and safety planning**
+- **Educational purposes in nonprofit settings** (classrooms, support groups)
+- **Sharing links** to the website on social media, websites, or forums
+- **Brief quotations** with proper attribution (fair use)
+- **Screenshots for demonstration** in educational or advocacy contexts (with attribution)
+
+### Attribution Standards
+
+When using permitted content, you must:
+
+1. Clearly identify the source as "Domestic Violence Resources" with the website URL
+2. Include copyright notice: "© 2026 Domestic Violence Resources Project"
+3. Not imply endorsement by or affiliation with our project
+4. Maintain the integrity of the content without misrepresentation
+5. Include any applicable third-party attributions (e.g., DAIP for Power and Control Wheel)
+
+### Misrepresentation Prohibited
+
+You may not:
+
+- Falsely claim authorship of website content
+- Imply that content originates from a different source
+- Modify content in ways that misrepresent the original meaning
+- Use website branding in a manner that suggests official partnership or endorsement
+
+### Request Permission
+
+To request permission for uses not covered above, contact us through our GitHub repository with:
+
+- Description of intended use
+- Specific content you wish to use
+- Distribution method and audience size
+- Whether use is commercial or noncommercial
+- Timeline for publication or distribution
+
+We generally grant permission for legitimate nonprofit advocacy, research, and educational purposes.
+
+---
 
 ## 📋 Table of Contents
 
 1. [Overview](#overview)
 2. [Features](#features)
-3. [Accessibility Compliance](#accessibility-compliance)
+3. [Accessibility Compliance (Official Statement Above)](#accessibility-compliance-statement)
 4. [Data Sourcing & Methodology](#data-sourcing--methodology)
 5. [Ethical Considerations](#ethical-considerations)
 6. [How to Update Statistics](#how-to-update-statistics)
@@ -27,7 +480,7 @@ A comprehensive, accessible, and survivor-centered website providing critical in
 8. [Deployment Instructions](#deployment-instructions)
 9. [Safety Features](#safety-features)
 10. [Contributing Guidelines](#contributing-guidelines)
-11. [License & Attribution](#license--attribution)
+11. [License & Technical Implementation](#license--technical-implementation)
 
 ---
 
@@ -527,70 +980,92 @@ We welcome contributions from:
 
 ---
 
-## License & Attribution
+## License & Technical Implementation
 
 ### Website Content License
 
-This website's code and original content are released under the **MIT License**:
+**Copyright © 2026 Domestic Violence Resources Project. All Rights Reserved.**
+
+This website's design, code, and original content are proprietary unless otherwise noted. While the code structure may be referenced for educational purposes, reproduction for public deployment requires written permission.
+
+#### Open Source Components
+
+Certain technical components are available under permissive licenses:
 
 ```
-MIT License
+MIT License - Technical Framework (HTML/CSS/JS Structure)
 
-Copyright (c) 2026 Domestic Violence Resources
+Permission is hereby granted to web developers and advocates to reference
+the technical implementation (HTML structure, CSS styling patterns,
+JavaScript functionality) for educational purposes and for creating
+similar domestic violence resource websites.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+You may study and adapt the code structure for legitimate nonprofit
+domestic violence advocacy purposes, provided that:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. You do not copy the exact content, branding, or design wholesale
+2. You customize all resources and content for your specific jurisdiction
+3. You verify all statistics and resource information independently
+4. You include proper attribution to techniques or patterns borrowed
+5. Your use is exclusively for nonprofit domestic violence advocacy
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
 ```
 
-### Attribution Requirements
+### Third-Party Licenses & Attribution
 
 #### Power and Control Wheel
 
 The **Domestic Violence Power and Control Wheel** is © **Domestic Abuse Intervention Programs (DAIP)**, Duluth, Minnesota.
 
-- Visit: [www.theduluthmodel.org](https://www.theduluthmodel.org)
-- This model is used with educational intent; commercial use may require permission from DAIP
+- Official Website: [www.theduluthmodel.org](https://www.theduluthmodel.org)
+- Used here for educational and advocacy purposes
+- Commercial use requires permission from DAIP
+- This model is internationally recognized and widely used in domestic violence education
 
-#### Data Sources
+#### Data Sources & Attribution
 
-All statistics are attributed directly to their sources with inline citations. Major sources include:
+All statistics are attributed to authoritative sources with direct citations:
 
-- **Centers for Disease Control and Prevention (CDC)**
-- **National Coalition Against Domestic Violence (NCADV)**
-- **Bureau of Justice Statistics (BJS)**
-- **National Institute of Justice (NIJ)**
-- **UNICEF**
-- **World Health Organization (WHO)**
+- **Centers for Disease Control and Prevention (CDC)** - U.S. Public Health Data
+- **National Coalition Against Domestic Violence (NCADV)** - Advocacy & Statistics
+- **Bureau of Justice Statistics (BJS)** - U.S. Department of Justice Data
+- **National Institute of Justice (NIJ)** - Research & Analysis
+- **UNICEF** - International Child Welfare Data
+- **World Health Organization (WHO)** - Global Health Data
 
-#### Third-Party Tools
+Each source is linked directly from the statistics page. Users should verify current data with original sources.
 
-- **UserWay Accessibility Widget**: © UserWay Inc.
-- **Google Fonts (Inter)**: © Google Inc., Licensed under SIL Open Font License
+#### Third-Party Integrations
 
-### Disclaimer on Reuse
+- **UserWay Accessibility Widget** - © UserWay Inc. | [userway.org](https://userway.org)
+- **Google Fonts (Inter Family)** - © Google Inc. | Licensed under SIL Open Font License 1.1
+- **GitHub Pages** - Hosting platform © GitHub Inc.
 
-If you fork or adapt this website:
+### Disclaimer on Forking or Adaptation
 
-- Verify all resource phone numbers and links for your location
-- Update statistics to ensure accuracy
-- Customize resources for your geographic area
-- Consider local laws and regulations
-- Maintain ethical standards and survivor-centered principles
+If you create a derivative website based on this project:
+
+**You MUST:**
+
+- Verify ALL phone numbers, addresses, and resources for your jurisdiction
+- Update statistics to current data from authoritative sources
+- Customize content for your geographic area and population
+- Review and comply with local laws and regulations
+- Maintain ethical standards and survivor-centered design principles
+- NOT represent your site as officially affiliated with this project
+
+**You SHOULD:**
+
+- Consult with local domestic violence advocates and service providers
+- Test accessibility thoroughly with users of assistive technologies
+- Implement appropriate safety features (Quick Exit, privacy warnings)
+- Regularly review and update content for accuracy
+- Consider cultural and linguistic needs of your community
+
+### Trademark Notice
+
+"Domestic Violence Resources" and associated branding elements are proprietary. Use of this name or similar branding for other websites requires permission to avoid confusion.
 
 ---
 
@@ -598,43 +1073,75 @@ If you fork or adapt this website:
 
 ### For Website Issues
 
-- **Technical bugs**: Open an issue on GitHub
-- **Content corrections**: Open a pull request with source documentation
-- **Accessibility concerns**: We take these seriously; please open a GitHub issue
+- **Technical Bugs**: [Open an issue on GitHub](https://github.com/kendychae/domestic-violence-is-slavery/issues)
+- **Content Corrections**: Submit a pull request with source documentation
+- **Accessibility Concerns**: We prioritize these; please open a GitHub issue immediately
+- **Permission Requests**: Contact through GitHub repository
 
 ### For Help with Domestic Violence
 
-**This repository is for website development only.** If you need help:
+**⚠️ THIS REPOSITORY IS FOR WEBSITE DEVELOPMENT ONLY ⚠️**
 
-- **National Domestic Violence Hotline**: **1-800-799-7233** (24/7)
-- **Text**: **START to 88788**
-- **Online Chat**: [www.thehotline.org](https://www.thehotline.org)
-- **TTY**: **1-800-787-3224**
-- **Emergency**: **Call 911**
+**If you or someone you know needs help:**
+
+- **🆘 Emergency**: **CALL 911** (immediate danger)
+- **📞 National Domestic Violence Hotline**: **1-800-799-7233** (24/7, confidential, free)
+- **💬 Text Support**: **Text START to 88788**
+- **💻 Online Chat**: [www.thehotline.org](https://www.thehotline.org)
+- **📱 TTY (Deaf/Hard of Hearing)**: **1-800-787-3224**
+
+**International Resources:**
+
+- **Global Domestic Violence Hotlines**: [HotPeachPages.net](http://www.hotpeachpages.net/)
 
 ---
 
 ## Acknowledgments
 
-This website exists thanks to:
+This website exists to honor and support survivors of domestic violence. It is made possible by:
 
-- **Survivors** who share their stories to help others
-- **Advocates** working tirelessly in domestic violence services
-- **Researchers** providing evidence-based data
-- **Organizations** like NCADV, The Hotline, and DAIP who lead this work
-- **Open-source community** enabling accessible web development
+- **Survivors** who courageously share their experiences to help others recognize abuse and seek safety
+- **Domestic violence advocates** working on the front lines in shelters, hotlines, and legal advocacy
+- **Researchers and public health professionals** who document the scope of domestic violence and inform evidence-based interventions
+- **Organizations** including National Coalition Against Domestic Violence (NCADV), National Domestic Violence Hotline, and Domestic Abuse Intervention Programs (DAIP)
+- **Open-source and accessibility communities** who make inclusive web development possible
+- **All individuals** committed to ending domestic violence and supporting survivors
+
+Special recognition to the Domestic Abuse Intervention Programs (DAIP) in Duluth, Minnesota, for developing the Power and Control Wheel, which has become a foundational tool for understanding domestic violence dynamics worldwide.
 
 ---
 
 ## Version History
 
-### Version 2.0 (February 2026) - Current
+### Version 2.1 (February 2026) - **CURRENT**
+
+**Major Updates:**
+
+- ✅ **Security Alert Banner** added to all pages with ESC key double-press exit
+- ✅ **Power and Control Wheel image** added to homepage
+- ✅ **Roulette animation** implemented for cards (signs, resources, stats)
+- ✅ **Footer timestamp** now dynamically displays current date
+- ✅ **Accessibility widget** repositioned below Quick Exit button
+- ✅ **Link accessibility** improved with proper visited/active states
+- ✅ **Stats page CDC link** updated to current URL
+- ✅ **Quick Exit button** functionality verified with ESC key (2 presses)
+- ✅ **Legal protections** comprehensive copyright and disclaimer added to README
+
+**Technical Improvements:**
+
+- Enhanced WCAG compliance throughout
+- Smooth scroll-triggered animations with reduced motion support
+- Intersection Observer API for performance optimization
+- Session storage for user preferences (banner dismissal)
+- Fully responsive design improvements
+
+### Version 2.0 (February 2026)
 
 - Complete professional redesign
 - Removed all emojis for professional appearance
 - Integrated official UserWay Accessibility Widget
 - Added comprehensive Safety Alert Modal
-- Added Domestic Violence Power and Control Wheel
+- Added Domestic Violence Power and Control Wheel (text version)
 - Every statistic now includes clickable source links
 - Added scroll-to-top button
 - Enhanced mobile responsiveness
@@ -644,16 +1151,44 @@ This website exists thanks to:
 
 ### Version 1.0 (February 2026)
 
-- Initial launch with 4 pages
-- Custom accessibility widget
-- Basic resource listings
+- Initial launch with 4 pages (Home, Resources, Signs & Symptoms, Statistics)
+- Custom accessibility features
+- Basic resource listings (national and Idaho)
 - Real-time statistics counter
 - Quick Exit and safety features
+- Mobile-responsive design
 
 ---
 
-**Last Updated**: February 10, 2026
+## Commitment to Survivors
+
+**Every feature on this website prioritizes survivor safety, privacy, and empowerment.**
+
+We recognize that:
+
+- Leaving an abusive relationship is complex and dangerous
+- Survivors are the experts on their own situations
+- Access to information can be life-saving
+- Safety and accessibility are not optional—they are fundamental rights
+
+If you're experiencing domestic violence, please know:
+
+- **You are not alone** - Millions of people experience domestic violence
+- **It is not your fault** - Abuse is about power and control, not your actions
+- **You deserve support** - Help is available 24/7, confidentially and free
+- **You have options** - Resources exist to help you plan for safety
+- **Your feelings are valid** - Trust your instincts about your safety
+
+---
+
+**Last Updated**: February 24, 2026
 
 **Repository**: [https://github.com/kendychae/domestic-violence-is-slavery](https://github.com/kendychae/domestic-violence-is-slavery)
 
-**Remember**: If you or someone you know is in immediate danger, call **911**. This website is a resource tool, not a replacement for emergency services.
+**License**: © 2026 Domestic Violence Resources Project. All Rights Reserved.
+
+**Contact for Emergencies**: Call 911 or National Domestic Violence Hotline at 1-800-799-7233
+
+---
+
+_This website is dedicated to all survivors of domestic violence. Your strength, resilience, and courage inspire this work. May you find the support, safety, and peace you deserve._
