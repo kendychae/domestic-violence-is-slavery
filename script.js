@@ -618,12 +618,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-        validateEmail,
-        validatePhone,
-        formatPhoneNumber,
-        copyToClipboard
-    };
-}
 // ========== Security Alert Banner ==========
 document.addEventListener('DOMContentLoaded', function() {
     const securityBanner = document.getElementById('securityBanner');
