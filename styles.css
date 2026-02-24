@@ -470,7 +470,7 @@ body.banner-active header {
 /* ========== Power and Control Wheel ========== */
 /* Wheel Image Container */
 .wheel-image-container {
-    max-width: 800px;
+    max-width: 600px;
     margin: var(--spacing-xl) auto;
     text-align: center;
 }
@@ -478,7 +478,7 @@ body.banner-active header {
 .wheel-image {
     width: 100%;
     height: auto;
-    max-width: 100%;
+    max-width: 600px;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
     display: block;
@@ -489,6 +489,10 @@ body.banner-active header {
     .wheel-image-container {
         max-width: 100%;
         margin: var(--spacing-lg) auto;
+    }
+    
+    .wheel-image {
+        max-width: 100%;
     }
 }
 
@@ -1253,6 +1257,36 @@ header {
     font-size: 0.85rem;
     color: var(--text-light);
     font-style: italic;
+}
+
+.stat-source a,
+.source-note a,
+.counter-citation a {
+    color: var(--primary-red);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.stat-source a:visited,
+.source-note a:visited,
+.counter-citation a:visited {
+    color: #9B1830; /* Darker red for visited with good contrast */
+}
+
+.stat-source a:hover,
+.stat-source a:focus,
+.source-note a:hover,
+.source-note a:focus,
+.counter-citation a:hover,
+.counter-citation a:focus {
+    color: var(--primary-red-dark);
+    text-decoration: underline;
+}
+
+.stat-source a:active,
+.source-note a:active,
+.counter-citation a:active {
+    color: #700000; /* Very dark red for active state with excellent contrast */
 }
 
 /* Economic Stats */
@@ -2247,12 +2281,21 @@ footer {
 }
 
 /* Apply roulette animation to card elements */
+/* Cards are visible by default for fallback */
 .abuse-type-card,
 .red-flag-card,
 .resource-card,
 .stat-card {
-    opacity: 0;
+    opacity: 1;
     animation: none;
+}
+
+/* Only hide and animate if JS adds the animation class */
+.js-roulette-enabled .abuse-type-card,
+.js-roulette-enabled .red-flag-card,
+.js-roulette-enabled .resource-card,
+.js-roulette-enabled .stat-card {
+    opacity: 0;
 }
 
 .abuse-type-card.roulette-animate,

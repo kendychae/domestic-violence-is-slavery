@@ -60,12 +60,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
     if (prefersReducedMotion) {
-        // If reduced motion is preferred, show all cards immediately
-        cards.forEach(function(card) {
-            card.style.opacity = '1';
-        });
+        // If reduced motion is preferred, keep cards visible
         return;
     }
+    
+    // Add class to body to enable roulette styling
+    document.body.classList.add('js-roulette-enabled');
     
     // Use Intersection Observer for performance
     const observerOptions = {
@@ -630,15 +630,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeBanner = document.getElementById('closeBanner');
     
     if (securityBanner && closeBanner) {
-        // Check if banner has been dismissed in this session
+        // Show banner on every page load unless dismissed in this session
         const bannerDismissed = sessionStorage.getItem('securityBannerDismissed');
         
         if (!bannerDismissed) {
-            // Show banner after a brief delay
+            // Show banner immediately (no delay for first-time visibility)
             setTimeout(function() {
                 securityBanner.classList.add('active');
                 document.body.classList.add('banner-active');
-            }, 1000);
+            }, 500);
         }
         
         // Close banner on button click
