@@ -1628,12 +1628,15 @@ footer {
         top: 70px;
         left: -100%;
         width: 100%;
+        height: calc(100vh - 70px);
         flex-direction: column;
         background: var(--white);
         box-shadow: var(--shadow-lg);
         padding: var(--spacing-md);
         transition: left var(--transition-normal);
         gap: 0;
+        z-index: 1100;
+        overflow-y: auto;
     }
     
     .nav-menu.active {
