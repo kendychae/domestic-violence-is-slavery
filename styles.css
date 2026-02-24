@@ -178,6 +178,7 @@ strong {
     font-weight: 600;
     font-size: 0.95rem;
     cursor: pointer;
+    z-index: 9998;
     z-index: 10000;
     box-shadow: var(--shadow-lg);
     transition: all var(--transition-fast);
@@ -200,15 +201,17 @@ strong {
 /* ========== UserWay Widget Positioning ========== */
 /* Override UserWay's default positioning to avoid Quick Exit overlap */
 #userway_p1 {
-    top: 60px !important; /* Position below Quick Exit button */
+    top: 110px !important; /* Position well below Quick Exit button */
     right: 10px !important;
     bottom: auto !important;
+    z-index: 9997 !important;
 }
 
 @media (max-width: 768px) {
     #userway_p1 {
-        top: 55px !important;
+        top: 110px !important;
         right: 10px !important;
+        z-index: 9997 !important;
     }
 }
 
@@ -362,8 +365,8 @@ strong {
 
 .security-banner-close {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 5px;
+    right: 5px;
     background: rgba(255, 255, 255, 0.2);
     color: var(--white);
     border: 2px solid var(--white);
@@ -379,6 +382,7 @@ strong {
     transition: all var(--transition-fast);
     line-height: 1;
     padding: 0;
+    z-index: 10000;
 }
 
 .security-banner-close:hover,
@@ -413,6 +417,9 @@ strong {
         width: 35px;
         height: 35px;
         font-size: 1.3rem;
+        top: 5px;
+        right: 5px;
+        z-index: 10000;
     }
 }
 
@@ -470,7 +477,7 @@ body.banner-active header {
 /* ========== Power and Control Wheel ========== */
 /* Wheel Image Container */
 .wheel-image-container {
-    max-width: 600px;
+    max-width: 400px;
     margin: var(--spacing-xl) auto;
     text-align: center;
 }
@@ -478,7 +485,7 @@ body.banner-active header {
 .wheel-image {
     width: 100%;
     height: auto;
-    max-width: 600px;
+    max-width: 400px;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
     display: block;
@@ -2117,7 +2124,7 @@ footer {
 
 .viewer-prev,
 .viewer-next {
-    background: var(--accent-color);
+    background: var(--primary-red);
     color: var(--white);
     border: none;
     padding: 12px 24px;
@@ -2133,7 +2140,7 @@ footer {
 
 .viewer-prev:hover,
 .viewer-next:hover {
-    background: var(--accent-hover);
+    background: var(--primary-red-dark);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(196, 30, 58, 0.3);
 }
@@ -2150,6 +2157,54 @@ footer {
     font-size: 1rem;
     color: var(--text-secondary);
     font-weight: 600;
+}
+
+/* Responsive viewer styles for mobile */
+@media (max-width: 768px) {
+    .viewer-content {
+        padding: 50px 20px 20px;
+        max-height: 95vh;
+    }
+    
+    .viewer-close {
+        top: 10px;
+        right: 10px;
+        font-size: 28px;
+    }
+    
+    .viewer-card-container h3 {
+        font-size: 1.5rem;
+    }
+    
+    .viewer-card-container .type-description {
+        font-size: 1rem;
+    }
+    
+    .viewer-card-container h4 {
+        font-size: 1.1rem;
+    }
+    
+    .viewer-card-container .signs-list li {
+        font-size: 0.95rem;
+        padding: 10px 0 10px 25px;
+    }
+    
+    .viewer-navigation {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .viewer-prev,
+    .viewer-next {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+    }
+    
+    .viewer-counter {
+        order: -1;
+        margin-bottom: 10px;
+    }
 }
 
 /* Make cards clickable */
