@@ -130,10 +130,18 @@ a {
     transition: color var(--transition-fast);
 }
 
+a:visited {
+    color: #A91C32; /* Slightly darker red for visited links with proper contrast */
+}
+
 a:hover,
 a:focus {
     color: var(--primary-red-dark);
     text-decoration: underline;
+}
+
+a:active {
+    color: #8B0000; /* Dark red for active state with better contrast */
 }
 
 a:focus-visible {
@@ -192,14 +200,15 @@ strong {
 /* ========== UserWay Widget Positioning ========== */
 /* Override UserWay's default positioning to avoid Quick Exit overlap */
 #userway_p1 {
-    bottom: 80px !important;
-    right: 20px !important;
+    top: 60px !important; /* Position below Quick Exit button */
+    right: 10px !important;
+    bottom: auto !important;
 }
 
 @media (max-width: 768px) {
     #userway_p1 {
-        bottom: 70px !important;
-        right: 15px !important;
+        top: 55px !important;
+        right: 10px !important;
     }
 }
 
@@ -291,6 +300,131 @@ strong {
     background: var(--primary-red-dark);
 }
 
+/* ========== Security Alert Banner ========== */
+.security-banner {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #C41E3A 0%, #8B0000 100%);
+    color: var(--white);
+    padding: var(--spacing-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    animation: slideDown 0.5s ease-out;
+}
+
+.security-banner.active {
+    display: block;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.security-banner-content {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    position: relative;
+    padding-right: 60px;
+}
+
+.security-banner h2 {
+    color: var(--white);
+    font-size: 1.3rem;
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.security-banner h2::before {
+    content: '⚠️';
+    font-size: 1.5rem;
+}
+
+.security-banner p {
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.security-banner strong {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.security-banner-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    border: 2px solid var(--white);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+    line-height: 1;
+    padding: 0;
+}
+
+.security-banner-close:hover,
+.security-banner-close:focus {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.security-banner-close span {
+    display: block;
+    margin-top: -2px;
+}
+
+@media (max-width: 768px) {
+    .security-banner {
+        padding: var(--spacing-sm);
+    }
+    
+    .security-banner-content {
+        padding-right: 50px;
+    }
+    
+    .security-banner h2 {
+        font-size: 1.1rem;
+    }
+    
+    .security-banner p {
+        font-size: 0.85rem;
+    }
+    
+    .security-banner-close {
+        width: 35px;
+        height: 35px;
+        font-size: 1.3rem;
+    }
+}
+
+/* Adjust body padding when banner is active */
+body.banner-active {
+    padding-top: 0;
+}
+
+body.banner-active header {
+    margin-top: 0;
+}
+
 /* ========== Scroll to Top Button ========== */
 .scroll-to-top {
     position: fixed;
@@ -334,6 +468,31 @@ strong {
 }
 
 /* ========== Power and Control Wheel ========== */
+/* Wheel Image Container */
+.wheel-image-container {
+    max-width: 800px;
+    margin: var(--spacing-xl) auto;
+    text-align: center;
+}
+
+.wheel-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .wheel-image-container {
+        max-width: 100%;
+        margin: var(--spacing-lg) auto;
+    }
+}
+
+/* Text-based Wheel (fallback/alternative display) */
 .wheel-container {
     background: var(--bg-secondary);
     border-radius: var(--radius-lg);
@@ -2054,3 +2213,125 @@ footer {
         border: 2px solid #000;
     }
 }
+
+/* ========== Roulette/Spin Animation for Cards ========== */
+@keyframes rouletteSpin {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) rotateY(-90deg) scale(0.8);
+    }
+    50% {
+        transform: translateY(-10px) rotateY(45deg) scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotateY(0) scale(1);
+    }
+}
+
+@keyframes rouletteReveal {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px) scale(0.9);
+        filter: blur(5px);
+    }
+    50% {
+        transform: translateX(10px) scale(1.02);
+        filter: blur(2px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+/* Apply roulette animation to card elements */
+.abuse-type-card,
+.red-flag-card,
+.resource-card,
+.stat-card {
+    opacity: 0;
+    animation: none;
+}
+
+.abuse-type-card.roulette-animate,
+.red-flag-card.roulette-animate,
+.resource-card.roulette-animate,
+.stat-card.roulette-animate {
+    animation: rouletteSpin 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Stagger the animations for a cascade effect */
+.abuse-type-card.roulette-animate:nth-child(1),
+.red-flag-card.roulette-animate:nth-child(1),
+.resource-card.roulette-animate:nth-child(1),
+.stat-card.roulette-animate:nth-child(1) { animation-delay: 0.1s; }
+
+.abuse-type-card.roulette-animate:nth-child(2),
+.red-flag-card.roulette-animate:nth-child(2),
+.resource-card.roulette-animate:nth-child(2),
+.stat-card.roulette-animate:nth-child(2) { animation-delay: 0.2s; }
+
+.abuse-type-card.roulette-animate:nth-child(3),
+.red-flag-card.roulette-animate:nth-child(3),
+.resource-card.roulette-animate:nth-child(3),
+.stat-card.roulette-animate:nth-child(3) { animation-delay: 0.3s; }
+
+.abuse-type-card.roulette-animate:nth-child(4),
+.red-flag-card.roulette-animate:nth-child(4),
+.resource-card.roulette-animate:nth-child(4),
+.stat-card.roulette-animate:nth-child(4) { animation-delay: 0.4s; }
+
+.abuse-type-card.roulette-animate:nth-child(5),
+.red-flag-card.roulette-animate:nth-child(5),
+.resource-card.roulette-animate:nth-child(5),
+.stat-card.roulette-animate:nth-child(5) { animation-delay: 0.5s; }
+
+.abuse-type-card.roulette-animate:nth-child(6),
+.red-flag-card.roulette-animate:nth-child(6),
+.resource-card.roulette-animate:nth-child(6),
+.stat-card.roulette-animate:nth-child(6) { animation-delay: 0.6s; }
+
+.abuse-type-card.roulette-animate:nth-child(7),
+.red-flag-card.roulette-animate:nth-child(7),
+.resource-card.roulette-animate:nth-child(7),
+.stat-card.roulette-animate:nth-child(7) { animation-delay: 0.7s; }
+
+.abuse-type-card.roulette-animate:nth-child(8),
+.red-flag-card.roulette-animate:nth-child(8),
+.resource-card.roulette-animate:nth-child(8),
+.stat-card.roulette-animate:nth-child(8) { animation-delay: 0.8s; }
+
+.abuse-type-card.roulette-animate:nth-child(9),
+.red-flag-card.roulette-animate:nth-child(9),
+.resource-card.roulette-animate:nth-child(9),
+.stat-card.roulette-animate:nth-child(9) { animation-delay: 0.9s; }
+
+.abuse-type-card.roulette-animate:nth-child(10),
+.red-flag-card.roulette-animate:nth-child(10),
+.resource-card.roulette-animate:nth-child(10),
+.stat-card.roulette-animate:nth-child(10) { animation-delay: 1.0s; }
+
+.abuse-type-card.roulette-animate:nth-child(11),
+.red-flag-card.roulette-animate:nth-child(11),
+.resource-card.roulette-animate:nth-child(11),
+.stat-card.roulette-animate:nth-child(11) { animation-delay: 1.1s; }
+
+.abuse-type-card.roulette-animate:nth-child(12),
+.red-flag-card.roulette-animate:nth-child(12),
+.resource-card.roulette-animate:nth-child(12),
+.stat-card.roulette-animate:nth-child(12) { animation-delay: 1.2s; }
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .abuse-type-card.roulette-animate,
+    .red-flag-card.roulette-animate,
+    .resource-card.roulette-animate,
+    .stat-card.roulette-animate {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+

@@ -22,6 +22,19 @@
     </script>
 </head>
 <body>
+    <!-- Security Alert Banner -->
+    <div id="securityBanner" class="security-banner" role="alert" aria-live="polite">
+        <div class="security-banner-content">
+            <h2>Security Alert</h2>
+            <p>Internet usage can be monitored and is impossible to erase completely. If you're concerned your internet usage might be monitored, call <strong>800.799.SAFE (7233)</strong>. Learn more about digital security and remember to <strong>clear your browser history</strong> after visiting this website.</p>
+            <p>Click the red "X" in the upper-right corner or <strong>press the "Escape" key twice</strong> at any time to leave immediately.</p>
+            <p><strong>Please contact 911 if you feel like you are in immediate danger or a life-threatening situation.</strong></p>
+            <button type="button" class="security-banner-close" aria-label="Close security alert" id="closeBanner">
+                <span>×</span>
+            </button>
+        </div>
+    </div>
+
     <!-- Safety Alert Modal -->
     <div id="safetyModal" class="safety-modal" role="dialog" aria-labelledby="safety-modal-title" aria-modal="true">
         <div class="safety-modal-content">
@@ -140,6 +153,11 @@
             <div class="container">
                 <h2 id="wheel-heading">Understanding the Power and Control Wheel</h2>
                 <p class="section-intro">The Power and Control Wheel is a widely recognized tool that illustrates the pattern of abusive behaviors used by abusers to establish and maintain power and control over their partners.</p>
+                
+                <!-- Actual Power and Control Wheel Image -->
+                <div class="wheel-image-container">
+                    <img src="domestic-abuse-wheel.webp" alt="Power and Control Wheel showing tactics of domestic abuse including coercion and threats, intimidation, emotional abuse, isolation, minimizing and denying, using children, male privilege, and economic abuse, with physical and sexual violence forming the outer ring" class="wheel-image" loading="lazy">
+                </div>
                 
                 <div class="wheel-container">
                     <div class="wheel-image-replacement">

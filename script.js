@@ -42,7 +42,55 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-
+// ========== Roulette Animation for Cards ==========
+document.addEventListener('DOMContentLoaded', function() {
+    // Select all cards that should have roulette animation
+    const cardSelectors = [
+        '.abuse-type-card',
+        '.red-flag-card',
+        '.resource-card',
+        '.stat-card'
+    ];
+    
+    const cards = document.querySelectorAll(cardSelectors.join(', '));
+    
+    if (cards.length === 0) return;
+    
+    // Check if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (prefersReducedMotion) {
+        // If reduced motion is preferred, show all cards immediately
+        cards.forEach(function(card) {
+            card.style.opacity = '1';
+        });
+        return;
+    }
+    
+    // Use Intersection Observer for performance
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                // Add animation class when element comes into view
+                entry.target.classList.add('roulette-animate');
+                
+                // Stop observing this element
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all cards
+    cards.forEach(function(card) {
+        observer.observe(card);
+    });
+});
 // ========== Scroll to Top Button ==========
 document.addEventListener('DOMContentLoaded', function() {
     const scrollToTopBtn = document.getElementById('scrollToTop');
@@ -72,8 +120,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const lastUpdatedElements = document.querySelectorAll('#lastUpdated');
     
     if (lastUpdatedElements.length > 0) {
-        // Last content update: February 10, 2026
-        const lastUpdateDate = new Date('2026-02-10');
+        // Use current date as the last updated date
+        const lastUpdateDate = new Date();
         const formattedDate = lastUpdateDate.toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'long',
@@ -105,15 +153,32 @@ document.addEventListener('DOMContentLoaded', function() {
         quickExitFooter.addEventListener('click', quickExit);
     }
     
-    // Emergency keyboard shortcut: Escape key 3 times quickly
+    // Emergency keyboard shortcut: Escape key 2 times quickly
     let escapeCount = 0;
     let escapeTimer;
     
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
+            // Don't count escape if safety modal is active
+            const safetyModal = document.getElementById('safetyModal');
+            const securityBanner = document.getElementById('securityBanner');
+            
+            if (safetyModal && safetyModal.classList.contains('active')) {
+                // Let the modal handle this escape
+                return;
+            }
+            
+            if (securityBanner && securityBanner.classList.contains('active')) {
+                // First escape closes the banner
+                if (escapeCount === 0) {
+                    securityBanner.classList.remove('active');
+                    sessionStorage.setItem('securityBannerDismissed', 'true');
+                }
+            }
+            
             escapeCount++;
             
-            if (escapeCount === 3) {
+            if (escapeCount === 2) {
                 quickExit();
             }
             
@@ -559,3 +624,38 @@ document.addEventListener('DOMContentLoaded', function() {
         copyToClipboard
     };
 }
+// ========== Security Alert Banner ==========
+document.addEventListener('DOMContentLoaded', function() {
+    const securityBanner = document.getElementById('securityBanner');
+    const closeBanner = document.getElementById('closeBanner');
+    
+    if (securityBanner && closeBanner) {
+        // Check if banner has been dismissed in this session
+        const bannerDismissed = sessionStorage.getItem('securityBannerDismissed');
+        
+        if (!bannerDismissed) {
+            // Show banner after a brief delay
+            setTimeout(function() {
+                securityBanner.classList.add('active');
+                document.body.classList.add('banner-active');
+            }, 1000);
+        }
+        
+        // Close banner on button click
+        closeBanner.addEventListener('click', function() {
+            securityBanner.classList.remove('active');
+            document.body.classList.remove('banner-active');
+            sessionStorage.setItem('securityBannerDismissed', 'true');
+        });
+        
+        // Close with keyboard
+        closeBanner.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                securityBanner.classList.remove('active');
+                document.body.classList.remove('banner-active');
+                sessionStorage.setItem('securityBannerDismissed', 'true');
+            }
+        });
+    }
+});
