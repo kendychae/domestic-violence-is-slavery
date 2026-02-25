@@ -208,7 +208,7 @@ strong {
 #userway_p2,
 #userway_p3,
 #userway_p4 {
-    top: 250px !important;
+    top: 500px !important;
     right: 10px !important;
     bottom: auto !important;
     left: auto !important;
@@ -221,7 +221,7 @@ strong {
     #userway_p2,
     #userway_p3,
     #userway_p4 {
-        top: 350px !important;
+        top: 600px !important;
         right: 10px !important;
         bottom: auto !important;
         left: auto !important;

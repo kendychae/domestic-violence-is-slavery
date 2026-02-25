@@ -822,7 +822,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function repositionUserWayWidget() {
         repositionCount++;
         const isMobile = window.innerWidth <= 768;
-        const topPosition = isMobile ? '350px' : '250px';
+        const topPosition = isMobile ? '600px' : '500px';
         
         let widgetFound = false;
         
