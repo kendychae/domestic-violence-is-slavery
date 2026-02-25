@@ -202,32 +202,14 @@ strong {
 /* ========== UserWay Widget Positioning ========== */
 /* Override UserWay's default positioning to avoid Quick Exit overlap */
 /* Position widget container only, don't break internal structure */
-/* ONLY target the exact widget container IDs - nothing else */
 
-#userway_p1,
-#userway_p2,
-#userway_p3,
-#userway_p4 {
-    top: 500px !important;
-    right: 10px !important;
-    bottom: auto !important;
-    left: auto !important;
-    z-index: 9900 !important;
-    position: fixed !important;
-}
-
-@media (max-width: 768px) {
-    #userway_p1,
-    #userway_p2,
-    #userway_p3,
-    #userway_p4 {
-        top: 600px !important;
-        right: 10px !important;
-        bottom: auto !important;
-        left: auto !important;
-        z-index: 9900 !important;
-        position: fixed !important;
-    }
+#userwayAccessibilityWidget,
+.userway-widget,
+div[id^="userway"] {
+    top: auto !important;
+    bottom: 24px !important;
+    right: 20px !important;
+    z-index: 999999 !important;
 }
 
 /* ========== Safety Modal ========== */

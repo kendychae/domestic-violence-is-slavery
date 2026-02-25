@@ -815,47 +815,48 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 // ========== Force UserWay Widget Positioning ==========
-// Target ONLY the specific widget container IDs - nothing else
+// Target UserWay widget using correct selectors
 document.addEventListener('DOMContentLoaded', function() {
     let repositionCount = 0;
     
     function repositionUserWayWidget() {
         repositionCount++;
-        const isMobile = window.innerWidth <= 768;
-        const topPosition = isMobile ? '600px' : '500px';
-        
         let widgetFound = false;
         
-        // ONLY target the exact widget container IDs - nothing else
-        const widgetIds = ['userway_p1', 'userway_p2', 'userway_p3', 'userway_p4'];
+        // Target widget by ID
+        const widgetById = document.getElementById('userwayAccessibilityWidget');
+        if (widgetById) {
+            applyStyles(widgetById);
+            widgetFound = true;
+        }
         
-        widgetIds.forEach(function(id) {
-            const element = document.getElementById(id);
-            if (element) {
-                // Verify it's actually the widget (fixed position element)
-                const computedStyle = window.getComputedStyle(element);
-                if (computedStyle.position === 'fixed') {
-                    applyStyles(element, topPosition);
-                    widgetFound = true;
-                    if (repositionCount <= 5) {
-                        console.log('Found UserWay widget:', id, 'at position:', topPosition);
-                    }
-                }
+        // Target widget by class
+        const widgetsByClass = document.querySelectorAll('.userway-widget');
+        widgetsByClass.forEach(function(element) {
+            applyStyles(element);
+            widgetFound = true;
+        });
+        
+        // Target widget by ID prefix
+        const widgetsByPrefix = document.querySelectorAll('div[id^="userway"]');
+        widgetsByPrefix.forEach(function(element) {
+            const computedStyle = window.getComputedStyle(element);
+            if (computedStyle.position === 'fixed') {
+                applyStyles(element);
+                widgetFound = true;
             }
         });
         
-        if (!widgetFound && repositionCount <= 10) {
-            console.log('UserWay widget not found yet (attempt ' + repositionCount + ')');
+        if (widgetFound && repositionCount <= 5) {
+            console.log('UserWay widget repositioned (attempt ' + repositionCount + ')');
         }
     }
     
-    function applyStyles(element, topPosition) {
-        element.style.setProperty('top', topPosition, 'important');
-        element.style.setProperty('right', '10px', 'important');
-        element.style.setProperty('bottom', 'auto', 'important');
-        element.style.setProperty('left', 'auto', 'important');
-        element.style.setProperty('z-index', '9900', 'important');
-        element.style.setProperty('position', 'fixed', 'important');
+    function applyStyles(element) {
+        element.style.setProperty('top', 'auto', 'important');
+        element.style.setProperty('bottom', '24px', 'important');
+        element.style.setProperty('right', '20px', 'important');
+        element.style.setProperty('z-index', '999999', 'important');
     }
     
     // Run immediately
@@ -878,10 +879,11 @@ document.addEventListener('DOMContentLoaded', function() {
         mutations.forEach(function(mutation) {
             if (mutation.addedNodes.length) {
                 mutation.addedNodes.forEach(function(node) {
-                    if (node.nodeType === 1 && node.id) {
-                        // Only respond to the exact widget IDs
-                        if (node.id === 'userway_p1' || node.id === 'userway_p2' || 
-                            node.id === 'userway_p3' || node.id === 'userway_p4') {
+                    if (node.nodeType === 1) {
+                        // Check if it's a UserWay widget element
+                        if (node.id === 'userwayAccessibilityWidget' || 
+                            node.classList.contains('userway-widget') ||
+                            (node.id && node.id.startsWith('userway'))) {
                             setTimeout(repositionUserWayWidget, 100);
                         }
                     }
