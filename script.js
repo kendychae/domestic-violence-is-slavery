@@ -162,13 +162,24 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.key === 'Escape' || e.key === 'Esc') {
             console.log('ESC pressed. Current count:', escapeCount);
             
-            // Don't count escape if safety modal is active
+            // Don't count escape if any modal is active
             const safetyModal = document.getElementById('safetyModal');
             const securityBanner = document.getElementById('securityBanner');
+            const signsViewer = document.getElementById('signsViewer');
+            const wheelViewer = document.getElementById('wheelViewer');
             
             if (safetyModal && safetyModal.classList.contains('active')) {
                 console.log('Safety modal active - letting modal handle ESC');
-                // Let the modal handle this escape
+                return;
+            }
+            
+            if (signsViewer && signsViewer.classList.contains('active')) {
+                console.log('Signs viewer active - letting modal handle ESC');
+                return;
+            }
+            
+            if (wheelViewer && wheelViewer.classList.contains('active')) {
+                console.log('Wheel viewer active - letting modal handle ESC');
                 return;
             }
             
@@ -179,7 +190,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     securityBanner.classList.remove('active');
                     document.body.classList.remove('banner-active');
                     sessionStorage.setItem('securityBannerDismissed', 'true');
+                    // Don't count this as an escape for Quick Exit
+                    return;
                 }
+            }
+            
+            // Clear any existing timer
+            if (escapeTimer) {
+                clearTimeout(escapeTimer);
             }
             
             escapeCount++;
@@ -188,7 +206,15 @@ document.addEventListener('DOMContentLoaded', function() {
             if (escapeCount === 2) {
                 console.log('ESC pressed 2 times - triggering Quick Exit!');
                 quickExit();
+                escapeCount = 0;
+                return;
             }
+            
+            // Reset counter after 1 second if second ESC not pressed
+            escapeTimer = setTimeout(function() {
+                console.log('Timer expired - resetting escape count');
+                escapeCount = 0;
+            }, 1000);
             
             // Reset counter after 1 second
             clearTimeout(escapeTimer);
@@ -665,7 +691,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ========== Power Wheel Viewer Modal ==========
 document.addEventListener('DOMContentLoaded', function() {
-    const wheelModal = document.getElementById('wheelViewerModal');
+    const wheelModal = document.getElementById('wheelViewer');
     const wheelImageContainer = document.querySelector('.wheel-viewer-image-container');
     const wheelCounter = document.getElementById('wheelViewerCounter');
     const closeBtn = document.getElementById('closeWheelViewer');
