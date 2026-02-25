@@ -204,7 +204,7 @@ strong {
 #userway_p2,
 #userway_p3,
 #userway_p4 {
-    top: 85px !important;
+    top: 133px !important;
     right: 10px !important;
     bottom: auto !important;
     left: auto !important;
@@ -216,7 +216,7 @@ strong {
     #userway_p2,
     #userway_p3,
     #userway_p4 {
-        top: 145px !important;
+        top: 180px !important;
         right: 10px !important;
         bottom: auto !important;
         left: auto !important;
@@ -974,6 +974,11 @@ header {
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
+}
+
+/* Mobile hero phone - hidden by default */
+.mobile-hero-phone {
+    display: none;
 }
 
 .hero h1 {
@@ -1907,22 +1912,31 @@ footer {
     
     /* Show phone below logo in mobile */
     .mobile-logo-phone {
-        display: block;
-        position: absolute;
-        left: var(--spacing-md);
-        top: 60px;
-        font-size: 0.8rem;
-        color: var(--text-secondary);
+        display: none !important;
     }
     
-    .mobile-logo-phone a {
-        color: var(--primary-red);
-        text-decoration: none;
+    /* Show phone in hero instead */
+    .mobile-hero-phone {
+        display: block;
+        text-align: center;
+        margin-bottom: var(--spacing-md);
+        font-size: 1.1rem;
         font-weight: 600;
     }
     
-    .mobile-logo-phone a:hover {
-        text-decoration: underline;
+    .mobile-hero-phone a {
+        color: var(--white);
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.6rem 1.2rem;
+        border-radius: var(--radius-md);
+        display: inline-block;
+        transition: all var(--transition-fast);
+    }
+    
+    .mobile-hero-phone a:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
     }
     
     .hero h1 {
@@ -1948,7 +1962,7 @@ footer {
     .quick-exit-btn {
         font-size: 0.85rem;
         padding: 0.6rem 1rem;
-        top: 24px;
+        top: 72px;
         right: 10px;
     }
     
