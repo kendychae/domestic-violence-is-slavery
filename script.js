@@ -815,40 +815,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 // ========== Force UserWay Widget Positioning ==========
-// Aggressive override to prevent widget from covering Quick Exit button
+// Target ONLY the specific widget container IDs - nothing else
 document.addEventListener('DOMContentLoaded', function() {
     let repositionCount = 0;
-    
-    // Inject CSS to override widget positioning
-    function injectWidgetCSS() {
-        const isMobile = window.innerWidth <= 768;
-        const topPosition = isMobile ? '350px' : '250px';
-        
-        // Remove old style tag if it exists
-        const oldStyle = document.getElementById('userway-position-override');
-        if (oldStyle) {
-            oldStyle.remove();
-        }
-        
-        // Create new style tag
-        const style = document.createElement('style');
-        style.id = 'userway-position-override';
-        style.textContent = `
-            /* Force UserWay widget position - injected by script */
-            #userway_p1, #userway_p2, #userway_p3, #userway_p4,
-            [id*="userway"], [id*="UserWay"],
-            [data-uw-w-loader], [data-uw-rm-show] {
-                top: ${topPosition} !important;
-                right: 10px !important;
-                bottom: auto !important;
-                left: auto !important;
-                z-index: 9900 !important;
-                position: fixed !important;
-            }
-        `;
-        document.head.appendChild(style);
-        console.log('Injected UserWay positioning CSS:', topPosition);
-    }
     
     function repositionUserWayWidget() {
         repositionCount++;
@@ -857,139 +826,74 @@ document.addEventListener('DOMContentLoaded', function() {
         
         let widgetFound = false;
         
-        // Try multiple element selection strategies
-        const strategies = [
-            // Strategy 1: Specific IDs
-            function() {
-                const ids = ['userway_p1', 'userway_p2', 'userway_p3', 'userway_p4'];
-                ids.forEach(function(id) {
-                    const el = document.getElementById(id);
-                    if (el) {
-                        applyStyles(el, topPosition);
-                        widgetFound = true;
-                        console.log('Found widget by ID:', id);
+        // ONLY target the exact widget container IDs - nothing else
+        const widgetIds = ['userway_p1', 'userway_p2', 'userway_p3', 'userway_p4'];
+        
+        widgetIds.forEach(function(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                // Verify it's actually the widget (fixed position element)
+                const computedStyle = window.getComputedStyle(element);
+                if (computedStyle.position === 'fixed') {
+                    applyStyles(element, topPosition);
+                    widgetFound = true;
+                    if (repositionCount <= 5) {
+                        console.log('Found UserWay widget:', id, 'at position:', topPosition);
                     }
-                });
-            },
-            // Strategy 2: Find by attribute
-            function() {
-                const elements = document.querySelectorAll('[data-uw-w-loader], [data-uw-rm-show]');
-                if (elements.length > 0) {
-                    elements.forEach(function(el) {
-                        applyStyles(el, topPosition);
-                        widgetFound = true;
-                        console.log('Found widget by data attribute');
-                    });
                 }
-            },
-            // Strategy 3: Find any element with 'userway' in id
-            function() {
-                const elements = document.querySelectorAll('[id*="userway"], [id*="UserWay"]');
-                elements.forEach(function(el) {
-                    const style = window.getComputedStyle(el);
-                    if (style.position === 'fixed') {
-                        applyStyles(el, topPosition);
-                        widgetFound = true;
-                        console.log('Found UserWay element:', el.id);
-                    }
-                });
             }
-        ];
+        });
         
-        // Run all strategies
-        strategies.forEach(function(strategy) { strategy(); });
-        
-        if (repositionCount <= 10 && !widgetFound) {
+        if (!widgetFound && repositionCount <= 10) {
             console.log('UserWay widget not found yet (attempt ' + repositionCount + ')');
         }
     }
     
     function applyStyles(element, topPosition) {
-        // Force styles multiple ways
-        element.style.cssText = 'top: ' + topPosition + ' !important; right: 10px !important; bottom: auto !important; left: auto !important; z-index: 9900 !important; position: fixed !important;';
         element.style.setProperty('top', topPosition, 'important');
         element.style.setProperty('right', '10px', 'important');
         element.style.setProperty('bottom', 'auto', 'important');
         element.style.setProperty('left', 'auto', 'important');
         element.style.setProperty('z-index', '9900', 'important');
         element.style.setProperty('position', 'fixed', 'important');
-        
-        // Also set attribute directly
-        element.setAttribute('style', element.style.cssText);
     }
     
-    // Inject CSS immediately
-    injectWidgetCSS();
-    
-    // Run repositioning immediately
+    // Run immediately
     repositionUserWayWidget();
     
-    // Run repeatedly with increasing delays
-    setTimeout(repositionUserWayWidget, 100);
-    setTimeout(repositionUserWayWidget, 300);
+    // Run with delays to catch late-loading widget
     setTimeout(repositionUserWayWidget, 500);
-    setTimeout(function() { injectWidgetCSS(); repositionUserWayWidget(); }, 1000);
-    setTimeout(repositionUserWayWidget, 1500);
-    setTimeout(function() { injectWidgetCSS(); repositionUserWayWidget(); }, 2000);
+    setTimeout(repositionUserWayWidget, 1000);
+    setTimeout(repositionUserWayWidget, 2000);
     setTimeout(repositionUserWayWidget, 3000);
-    setTimeout(function() { injectWidgetCSS(); repositionUserWayWidget(); }, 5000);
-    setTimeout(repositionUserWayWidget, 7000);
-    setTimeout(function() { injectWidgetCSS(); repositionUserWayWidget(); }, 10000);
-    
-    // Keep checking every 2 seconds for the first minute
-    let intervalCount = 0;
-    const checkInterval = setInterval(function() {
-        repositionUserWayWidget();
-        if (intervalCount % 5 === 0) { // Re-inject CSS every 10 seconds
-            injectWidgetCSS();
-        }
-        intervalCount++;
-        if (intervalCount > 30) { // Stop after 30 checks (60 seconds)
-            clearInterval(checkInterval);
-            console.log('Stopped continuous widget repositioning');
-        }
-    }, 2000);
+    setTimeout(repositionUserWayWidget, 5000);
     
     // Run on window resize
     window.addEventListener('resize', function() {
-        injectWidgetCSS();
         setTimeout(repositionUserWayWidget, 100);
     });
     
-    // Watch for any DOM changes
+    // Watch for widget being added to DOM
     const observer = new MutationObserver(function(mutations) {
-        let shouldReposition = false;
         mutations.forEach(function(mutation) {
-            // Check for new nodes
             if (mutation.addedNodes.length) {
                 mutation.addedNodes.forEach(function(node) {
-                    if (node.nodeType === 1) {
-                        const id = node.id || '';
-                        if (id.toLowerCase().includes('userway')) {
-                            shouldReposition = true;
+                    if (node.nodeType === 1 && node.id) {
+                        // Only respond to the exact widget IDs
+                        if (node.id === 'userway_p1' || node.id === 'userway_p2' || 
+                            node.id === 'userway_p3' || node.id === 'userway_p4') {
+                            setTimeout(repositionUserWayWidget, 100);
                         }
                     }
                 });
             }
-            // Check for style attribute changes on userway elements
-            if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
-                const id = mutation.target.id || '';
-                if (id.toLowerCase().includes('userway')) {
-                    shouldReposition = true;
-                }
-            }
         });
-        if (shouldReposition) {
-            setTimeout(repositionUserWayWidget, 50);
-        }
     });
     
     observer.observe(document.body, {
         childList: true,
-        subtree: true,
-        attributes: true,
-        attributeFilter: ['style', 'class']
+        subtree: true
     });
     
-    console.log('UserWay widget positioning override active - check console for widget detection');
+    console.log('UserWay widget positioning active - targeting only widget containers');
 });
