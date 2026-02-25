@@ -814,3 +814,68 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+// ========== Force UserWay Widget Positioning ==========
+// Override UserWay widget position to prevent overlap with Quick Exit button
+document.addEventListener('DOMContentLoaded', function() {
+    function repositionUserWayWidget() {
+        // Determine position based on screen width
+        const isMobile = window.innerWidth <= 768;
+        const topPosition = isMobile ? '450px' : '400px';
+        
+        // Target all possible UserWay widget elements
+        const selectors = [
+            '#userway_p1', '#userway_p2', '#userway_p3', '#userway_p4',
+            'div[id^=\"userway\"]', 'iframe[id^=\"userway\"]',
+            '[data-uw-w-loader]', '[data-uw-feature-ignore]'
+        ];
+        
+        selectors.forEach(function(selector) {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach(function(element) {
+                if (element) {
+                    element.style.setProperty('top', topPosition, 'important');
+                    element.style.setProperty('right', '10px', 'important');
+                    element.style.setProperty('bottom', 'auto', 'important');
+                    element.style.setProperty('left', 'auto', 'important');
+                    element.style.setProperty('position', 'fixed', 'important');
+                    element.style.setProperty('z-index', '9900', 'important');
+                }
+            });
+        });
+    }
+    
+    // Run immediately
+    repositionUserWayWidget();
+    
+    // Run after delays to catch late-loading widget
+    setTimeout(repositionUserWayWidget, 500);
+    setTimeout(repositionUserWayWidget, 1000);
+    setTimeout(repositionUserWayWidget, 2000);
+    setTimeout(repositionUserWayWidget, 3000);
+    
+    // Run on window resize
+    window.addEventListener('resize', repositionUserWayWidget);
+    
+    // Use MutationObserver to detect when widget is added to DOM
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.addedNodes.length) {
+                mutation.addedNodes.forEach(function(node) {
+                    if (node.nodeType === 1) { // Element node
+                        const id = node.id || '';
+                        const className = node.className || '';
+                        if (id.includes('userway') || className.includes('userway') || 
+                            node.hasAttribute('data-uw-w-loader')) {
+                            setTimeout(repositionUserWayWidget, 100);
+                        }
+                    }
+                });
+            }
+        });
+    });
+    
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+});

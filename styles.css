@@ -200,27 +200,59 @@ strong {
 /* ========== UserWay Widget Positioning ========== */
 /* Override UserWay's default positioning to avoid Quick Exit overlap */
 /* Position widget container only, don't break internal structure */
+/* Multiple selector approaches to ensure compatibility */
+
+/* Target by ID patterns */
 #userway_p1,
 #userway_p2,
 #userway_p3,
-#userway_p4 {
+#userway_p4,
+div[id^="userway"],
+iframe[id^="userway"] {
     top: 400px !important;
     right: 10px !important;
     bottom: auto !important;
     left: auto !important;
     z-index: 9900 !important;
+    position: fixed !important;
+}
+
+/* Target by data attributes */
+[data-uw-w-loader],
+[data-uw-feature-ignore],
+div[data-account] {
+    top: 400px !important;
+    right: 10px !important;
+    bottom: auto !important;
+    left: auto !important;
+    z-index: 9900 !important;
+    position: fixed !important;
 }
 
 @media (max-width: 768px) {
     #userway_p1,
     #userway_p2,
     #userway_p3,
-    #userway_p4 {
+    #userway_p4,
+    div[id^="userway"],
+    iframe[id^="userway"] {
         top: 450px !important;
         right: 10px !important;
         bottom: auto !important;
         left: auto !important;
         z-index: 9900 !important;
+        position: fixed !important;
+    }
+    
+    [data-uw-w-loader],
+    [data-uw-feature-ignore],
+    div[data-account] {
+        top: 450px !important;
+        right: 10px !important;
+        bottom: auto !important;
+        left: auto !important;
+        z-index: 9900 !important;
+        position: fixed !important;
     }
 }
 
