@@ -820,7 +820,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function repositionUserWayWidget() {
         // Determine position based on screen width
         const isMobile = window.innerWidth <= 768;
-        const topPosition = isMobile ? '200px' : '150px';
+        const topPosition = isMobile ? '350px' : '250px';
         
         // ONLY target the specific UserWay widget container IDs - nothing else
         const specificIds = ['userway_p1', 'userway_p2', 'userway_p3', 'userway_p4'];
