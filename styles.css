@@ -207,10 +207,10 @@ strong {
 .userway_buttons_wrapper,
 [id^="userway"],
 [class*="userway"] {
-    top: auto !important;
-    right: auto !important;
-    bottom: 80px !important;
-    left: 10px !important;
+    top: 70px !important;
+    right: 10px !important;
+    bottom: auto !important;
+    left: auto !important;
     z-index: 9900 !important;
 }
 
@@ -222,10 +222,10 @@ strong {
     .userway_buttons_wrapper,
     [id^="userway"],
     [class*="userway"] {
-        top: auto !important;
-        right: auto !important;
-        bottom: 80px !important;
-        left: 10px !important;
+        top: 140px !important;
+        right: 10px !important;
+        bottom: auto !important;
+        left: auto !important;
         z-index: 9900 !important;
     }
 }
@@ -926,6 +926,11 @@ header {
 
 .emergency-number {
     display: block;
+}
+
+/* Mobile emergency phone - hidden by default, shown with JS */
+.mobile-emergency-phone {
+    display: none;
 }
 
 .emergency-link {
@@ -1899,6 +1904,30 @@ footer {
     
     .emergency-number {
         display: none !important;
+    }
+    
+    /* Mobile Emergency Phone - Fixed below hamburger */
+    .mobile-emergency-phone {
+        display: block;
+        position: fixed;
+        top: 80px;
+        right: 10px;
+        z-index: 9950;
+        background: var(--primary-red);
+        color: var(--white);
+        padding: 0.4rem 0.8rem;
+        border-radius: var(--radius-sm);
+        font-size: 0.85rem;
+        font-weight: 600;
+        box-shadow: var(--shadow-md);
+        text-decoration: none;
+        transition: all var(--transition-fast);
+    }
+    
+    .mobile-emergency-phone:hover {
+        background: var(--primary-red-dark);
+        transform: translateY(-2px);
+        text-decoration: none;
     }
     
     .hero h1 {
