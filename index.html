@@ -152,11 +152,23 @@
         <section class="content-section alternate-bg" aria-labelledby="wheel-heading">
             <div class="container">
                 <h2 id="wheel-heading">Understanding the Power and Control Wheel</h2>
-                <p class="section-intro">The Power and Control Wheel is a widely recognized tool that illustrates the pattern of abusive behaviors used by abusers to establish and maintain power and control over their partners.</p>
+                <p class="section-intro">The Power and Control Wheel is a widely recognized tool that illustrates the pattern of abusive behaviors used by abusers to establish and maintain power and control over their partners. Click on each wheel to view it in detail.</p>
                 
-                <!-- Actual Power and Control Wheel Image -->
-                <div class="wheel-image-container">
-                    <img src="domestic-abuse-wheel.webp" alt="Power and Control Wheel showing tactics of domestic abuse including coercion and threats, intimidation, emotional abuse, isolation, minimizing and denying, using children, male privilege, and economic abuse, with physical and sexual violence forming the outer ring" class="wheel-image" loading="lazy">
+                <!-- Power and Control Wheel Images - Clickable -->
+                <div class="wheel-images-grid">
+                    <div class="wheel-image-card" data-wheel-index="0" role="button" tabindex="0" aria-label="Click to view Power and Control Wheel in detail">
+                        <img src="powerWheel1.jpg" alt="Power and Control Wheel showing tactics of domestic abuse including coercion and threats, intimidation, emotional abuse, isolation, minimizing and denying, using children, male privilege, and economic abuse, with physical and sexual violence forming the outer ring" class="wheel-image" loading="lazy">
+                        <div class="wheel-overlay">
+                            <span class="wheel-zoom-icon">🔍 Click to Enlarge</span>
+                        </div>
+                    </div>
+                    
+                    <div class="wheel-image-card" data-wheel-index="1" role="button" tabindex="0" aria-label="Click to view detailed breakdown of Power and Control Wheel">
+                        <img src="powerWheel2.jpg" alt="Detailed breakdown of Power and Control Wheel showing specific examples of coercion, threats, intimidation, emotional abuse, isolation, economic abuse, male privilege, using children, minimizing and blaming behaviors" class="wheel-image" loading="lazy">
+                        <div class="wheel-overlay">
+                            <span class="wheel-zoom-icon">🔍 Click to Enlarge</span>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="wheel-container">
@@ -251,6 +263,27 @@
             </div>
         </section>
     </main>
+
+    <!-- Power Wheel Viewer Modal -->
+    <div class="wheel-viewer-modal" id="wheelViewer" role="dialog" aria-modal="true" aria-labelledby="wheel-viewer-title">
+        <div class="wheel-viewer-content">
+            <button class="wheel-viewer-close" id="closeWheelViewer" aria-label="Close viewer">
+                ×
+            </button>
+            <div class="wheel-viewer-image-container" id="wheelViewerImageContainer">
+                <!-- Image will be inserted here by JavaScript -->
+            </div>
+            <div class="wheel-viewer-navigation">
+                <button class="wheel-viewer-prev" id="wheelViewerPrev" aria-label="Previous wheel">
+                    ◀ Previous
+                </button>
+                <span class="wheel-viewer-counter" id="wheelViewerCounter"></span>
+                <button class="wheel-viewer-next" id="wheelViewerNext" aria-label="Next wheel">
+                    Next ▶
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer role="contentinfo">

@@ -49,7 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
         '.abuse-type-card',
         '.red-flag-card',
         '.resource-card',
-        '.stat-card'
+        '.stat-card',
+        '.wheel-image-card'
     ];
     
     const cards = document.querySelectorAll(cardSelectors.join(', '));
@@ -660,4 +661,124 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+});
+
+// ========== Power Wheel Viewer Modal ==========
+document.addEventListener('DOMContentLoaded', function() {
+    const wheelModal = document.getElementById('wheelViewerModal');
+    const wheelImageContainer = document.querySelector('.wheel-viewer-image-container');
+    const wheelCounter = document.getElementById('wheelViewerCounter');
+    const closeBtn = document.getElementById('closeWheelViewer');
+    const prevBtn = document.getElementById('wheelViewerPrev');
+    const nextBtn = document.getElementById('wheelViewerNext');
+    const wheelCards = document.querySelectorAll('.wheel-image-card');
+    
+    if (!wheelModal || wheelCards.length === 0) return;
+    
+    let currentIndex = 0;
+    
+    // Store wheel image sources
+    const wheelImages = Array.from(wheelCards).map(card => {
+        const img = card.querySelector('.wheel-image');
+        return img ? img.src : '';
+    });
+    
+    // Add click and keyboard handlers to wheel cards
+    wheelCards.forEach((card, index) => {
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('aria-label', `Click to enlarge wheel image ${index + 1} of ${wheelCards.length}`);
+        
+        card.addEventListener('click', function() {
+            openWheelViewer(index);
+        });
+        
+        card.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openWheelViewer(index);
+            }
+        });
+    });
+    
+    function openWheelViewer(index) {
+        currentIndex = index;
+        showWheelImage(currentIndex);
+        wheelModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Focus management
+        setTimeout(() => {
+            closeBtn.focus();
+        }, 100);
+    }
+    
+    function closeWheelViewer() {
+        wheelModal.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        // Return focus to clicked card
+        if (wheelCards[currentIndex]) {
+            wheelCards[currentIndex].focus();
+        }
+    }
+    
+    function showWheelImage(index) {
+        // Create/update image element
+        wheelImageContainer.innerHTML = `<img src="${wheelImages[index]}" alt="Power and Control Wheel ${index + 1}" class="wheel-viewer-image">`;
+        
+        // Update counter
+        wheelCounter.textContent = `${index + 1} of ${wheelImages.length}`;
+        
+        // Update navigation buttons
+        prevBtn.disabled = (index === 0);
+        nextBtn.disabled = (index === wheelImages.length - 1);
+    }
+    
+    function navigatePrev() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            showWheelImage(currentIndex);
+        }
+    }
+    
+    function navigateNext() {
+        if (currentIndex < wheelImages.length - 1) {
+            currentIndex++;
+            showWheelImage(currentIndex);
+        }
+    }
+    
+    // Close button
+    closeBtn.addEventListener('click', closeWheelViewer);
+    closeBtn.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            closeWheelViewer();
+        }
+    });
+    
+    // Navigation buttons
+    prevBtn.addEventListener('click', navigatePrev);
+    nextBtn.addEventListener('click', navigateNext);
+    
+    // Close on outside click
+    wheelModal.addEventListener('click', function(e) {
+        if (e.target === wheelModal) {
+            closeWheelViewer();
+        }
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (!wheelModal.classList.contains('active')) return;
+        
+        if (e.key === 'Escape') {
+            closeWheelViewer();
+        } else if (e.key === 'ArrowLeft') {
+            navigatePrev();
+        } else if (e.key === 'ArrowRight') {
+            navigateNext();
+        }
+    });
 });
