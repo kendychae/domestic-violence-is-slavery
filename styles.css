@@ -167,9 +167,11 @@ strong {
 
 /* ========== Quick Exit Button ========== */
 .quick-exit-btn {
-    position: fixed;
-    top: 24px;
-    right: 10px;
+    position: fixed !important;
+    top: 24px !important;
+    right: 10px !important;
+    bottom: auto !important;
+    left: auto !important;
     background: var(--primary-red-dark);
     color: var(--white);
     border: none;
@@ -178,7 +180,7 @@ strong {
     font-weight: 600;
     font-size: 0.95rem;
     cursor: pointer;
-    z-index: 10001;
+    z-index: 10001 !important;
     box-shadow: var(--shadow-lg);
     transition: all var(--transition-fast);
     display: flex;
@@ -445,9 +447,11 @@ body.banner-active header {
 
 /* ========== Scroll to Top Button ========== */
 .scroll-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 30px !important;
+    top: auto !important;
+    left: auto !important;
     background: var(--primary-red);
     color: var(--white);
     width: 50px;
@@ -460,7 +464,7 @@ body.banner-active header {
     display: none;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
+    z-index: 1000 !important;
     transition: all var(--transition-fast);
 }
 
@@ -477,8 +481,8 @@ body.banner-active header {
 
 @media (max-width: 768px) {
     .scroll-to-top {
-        bottom: 20px;
-        right: 20px;
+        bottom: 20px !important;
+        right: 20px !important;
         width: 45px;
         height: 45px;
         font-size: 1.25rem;
@@ -1964,8 +1968,8 @@ footer {
     .quick-exit-btn {
         font-size: 0.85rem;
         padding: 0.6rem 1rem;
-        top: 72px;
-        right: 10px;
+        top: 72px !important;
+        right: 10px !important;
     }
     
     .scroll-to-top {
