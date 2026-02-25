@@ -168,7 +168,7 @@ strong {
 /* ========== Quick Exit Button ========== */
 .quick-exit-btn {
     position: fixed;
-    top: 10px;
+    top: 5px;
     right: 10px;
     background: var(--primary-red-dark);
     color: var(--white);
@@ -199,15 +199,12 @@ strong {
 
 /* ========== UserWay Widget Positioning ========== */
 /* Override UserWay's default positioning to avoid Quick Exit overlap */
-/* Target all possible UserWay widget elements */
+/* Position widget container only, don't break internal structure */
 #userway_p1,
 #userway_p2,
 #userway_p3,
-#userway_p4,
-.userway_buttons_wrapper,
-[id^="userway"],
-[class*="userway"] {
-    top: 70px !important;
+#userway_p4 {
+    top: 60px !important;
     right: 10px !important;
     bottom: auto !important;
     left: auto !important;
@@ -218,11 +215,8 @@ strong {
     #userway_p1,
     #userway_p2,
     #userway_p3,
-    #userway_p4,
-    .userway_buttons_wrapper,
-    [id^="userway"],
-    [class*="userway"] {
-        top: 140px !important;
+    #userway_p4 {
+        top: 120px !important;
         right: 10px !important;
         bottom: auto !important;
         left: auto !important;
@@ -926,11 +920,6 @@ header {
 
 .emergency-number {
     display: block;
-}
-
-/* Mobile emergency phone - hidden by default, shown with JS */
-.mobile-emergency-phone {
-    display: none;
 }
 
 .emergency-link {
@@ -1903,31 +1892,18 @@ footer {
     }
     
     .emergency-number {
-        display: none !important;
+        display: block !important;
+        width: 100%;
+        text-align: center;
+        padding-top: var(--spacing-sm);
+        border-top: 1px solid var(--light-gray);
+        margin-top: var(--spacing-sm);
     }
     
-    /* Mobile Emergency Phone - Fixed below hamburger */
-    .mobile-emergency-phone {
-        display: block;
-        position: fixed;
-        top: 80px;
-        right: 10px;
-        z-index: 9950;
-        background: var(--primary-red);
-        color: var(--white);
-        padding: 0.4rem 0.8rem;
-        border-radius: var(--radius-sm);
-        font-size: 0.85rem;
-        font-weight: 600;
-        box-shadow: var(--shadow-md);
-        text-decoration: none;
-        transition: all var(--transition-fast);
-    }
-    
-    .mobile-emergency-phone:hover {
-        background: var(--primary-red-dark);
-        transform: translateY(-2px);
-        text-decoration: none;
+    .emergency-link {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+        justify-content: center;
     }
     
     .hero h1 {
@@ -1953,6 +1929,16 @@ footer {
     .quick-exit-btn {
         font-size: 0.85rem;
         padding: 0.6rem 1rem;
+        top: 5px;
+        right: 10px;
+    }
+    
+    .scroll-to-top {
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 45px;
+        height: 45px;
+        font-size: 1.25rem;
     }
 }
 
