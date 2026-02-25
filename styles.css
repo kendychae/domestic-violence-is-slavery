@@ -204,11 +204,12 @@ strong {
 #userway_p2,
 #userway_p3,
 #userway_p4 {
-    top: 400px !important;
+    top: 150px !important;
     right: 10px !important;
     bottom: auto !important;
     left: auto !important;
     z-index: 9900 !important;
+    position: fixed !important;
 }
 
 @media (max-width: 768px) {
@@ -216,11 +217,12 @@ strong {
     #userway_p2,
     #userway_p3,
     #userway_p4 {
-        top: 450px !important;
+        top: 200px !important;
         right: 10px !important;
         bottom: auto !important;
         left: auto !important;
         z-index: 9900 !important;
+        position: fixed !important;
     }
 }
 
