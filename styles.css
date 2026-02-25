@@ -199,19 +199,32 @@ strong {
 
 /* ========== UserWay Widget Positioning ========== */
 /* Override UserWay's default positioning to avoid Quick Exit overlap */
-#userway_p1 {
+/* Target all possible UserWay widget elements */
+#userway_p1,
+#userway_p2,
+#userway_p3,
+#userway_p4,
+.userway_buttons_wrapper,
+[id^="userway"],
+[class*="userway"] {
     top: auto !important;
     right: auto !important;
-    bottom: 120px !important;
+    bottom: 80px !important;
     left: 10px !important;
     z-index: 9900 !important;
 }
 
 @media (max-width: 768px) {
-    #userway_p1 {
+    #userway_p1,
+    #userway_p2,
+    #userway_p3,
+    #userway_p4,
+    .userway_buttons_wrapper,
+    [id^="userway"],
+    [class*="userway"] {
         top: auto !important;
         right: auto !important;
-        bottom: 150px !important;
+        bottom: 80px !important;
         left: 10px !important;
         z-index: 9900 !important;
     }
@@ -912,7 +925,7 @@ header {
 }
 
 .emergency-number {
-    display: none;
+    display: block;
 }
 
 .emergency-link {
@@ -1872,10 +1885,12 @@ footer {
         gap: 0;
         z-index: 1100;
         overflow-y: auto;
+        pointer-events: auto;
     }
     
     .nav-menu.active {
         left: 0;
+        pointer-events: auto;
     }
     
     .mobile-menu-toggle {
@@ -1883,12 +1898,7 @@ footer {
     }
     
     .emergency-number {
-        display: block;
-        width: 100%;
-        text-align: center;
-        padding-top: var(--spacing-sm);
-        border-top: 1px solid var(--light-gray);
-        margin-top: var(--spacing-sm);
+        display: none !important;
     }
     
     .hero h1 {
