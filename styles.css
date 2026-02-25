@@ -168,7 +168,7 @@ strong {
 /* ========== Quick Exit Button ========== */
 .quick-exit-btn {
     position: fixed;
-    top: 5px;
+    top: 24px;
     right: 10px;
     background: var(--primary-red-dark);
     color: var(--white);
@@ -204,7 +204,7 @@ strong {
 #userway_p2,
 #userway_p3,
 #userway_p4 {
-    top: 60px !important;
+    top: 85px !important;
     right: 10px !important;
     bottom: auto !important;
     left: auto !important;
@@ -216,7 +216,7 @@ strong {
     #userway_p2,
     #userway_p3,
     #userway_p4 {
-        top: 120px !important;
+        top: 145px !important;
         right: 10px !important;
         bottom: auto !important;
         left: auto !important;
@@ -878,6 +878,7 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: var(--spacing-md);
+    position: relative;
 }
 
 .logo a {
@@ -920,6 +921,11 @@ header {
 
 .emergency-number {
     display: block;
+}
+
+/* Mobile phone display below logo */
+.mobile-logo-phone {
+    display: none;
 }
 
 .emergency-link {
@@ -1865,12 +1871,16 @@ footer {
 
 /* ========== Responsive Design ========== */
 @media (max-width: 768px) {
+    .nav-container {
+        padding-bottom: 2.5rem;
+    }
+    
     .nav-menu {
         position: fixed;
-        top: 70px;
+        top: 90px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 70px);
+        height: calc(100vh - 90px);
         flex-direction: column;
         background: var(--white);
         box-shadow: var(--shadow-lg);
@@ -1892,18 +1902,27 @@ footer {
     }
     
     .emergency-number {
-        display: block !important;
-        width: 100%;
-        text-align: center;
-        padding-top: var(--spacing-sm);
-        border-top: 1px solid var(--light-gray);
-        margin-top: var(--spacing-sm);
+        display: none !important;
     }
     
-    .emergency-link {
-        font-size: 0.9rem;
-        padding: 0.6rem 1rem;
-        justify-content: center;
+    /* Show phone below logo in mobile */
+    .mobile-logo-phone {
+        display: block;
+        position: absolute;
+        left: var(--spacing-md);
+        top: 60px;
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+    }
+    
+    .mobile-logo-phone a {
+        color: var(--primary-red);
+        text-decoration: none;
+        font-weight: 600;
+    }
+    
+    .mobile-logo-phone a:hover {
+        text-decoration: underline;
     }
     
     .hero h1 {
@@ -1929,7 +1948,7 @@ footer {
     .quick-exit-btn {
         font-size: 0.85rem;
         padding: 0.6rem 1rem;
-        top: 5px;
+        top: 24px;
         right: 10px;
     }
     
