@@ -121,16 +121,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const lastUpdatedElements = document.querySelectorAll('#lastUpdated');
     
     if (lastUpdatedElements.length > 0) {
-        // Use current date as the last updated date
+        // Use current date and time as the last updated timestamp
         const lastUpdateDate = new Date();
-        const formattedDate = lastUpdateDate.toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
+        const formattedDateTime = lastUpdateDate.toLocaleString('en-US');
         
         lastUpdatedElements.forEach(function(element) {
-            element.textContent = formattedDate;
+            element.textContent = formattedDateTime;
         });
     }
 });
@@ -853,9 +849,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function applyStyles(element) {
-        element.style.setProperty('top', 'auto', 'important');
-        element.style.setProperty('bottom', '24px', 'important');
-        element.style.setProperty('right', '20px', 'important');
+        const isMobile = window.innerWidth <= 768;
+        const topPosition = isMobile ? '140px' : '100px';
+        const rightPosition = isMobile ? '16px' : '20px';
+        
+        element.style.setProperty('position', 'fixed', 'important');
+        element.style.setProperty('top', topPosition, 'important');
+        element.style.setProperty('right', rightPosition, 'important');
+        element.style.setProperty('bottom', 'auto', 'important');
         element.style.setProperty('z-index', '999999', 'important');
     }
     

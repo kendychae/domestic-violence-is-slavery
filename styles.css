@@ -180,7 +180,7 @@ strong {
     font-weight: 600;
     font-size: 0.95rem;
     cursor: pointer;
-    z-index: 10001 !important;
+    z-index: 99999 !important;
     box-shadow: var(--shadow-lg);
     transition: all var(--transition-fast);
     display: flex;
@@ -206,10 +206,22 @@ strong {
 #userwayAccessibilityWidget,
 .userway-widget,
 div[id^="userway"] {
-    top: auto !important;
-    bottom: 24px !important;
+    position: fixed !important;
+    top: 100px !important;
     right: 20px !important;
+    bottom: auto !important;
     z-index: 999999 !important;
+}
+
+@media (max-width: 768px) {
+    #userwayAccessibilityWidget,
+    .userway-widget,
+    div[id^="userway"] {
+        position: fixed !important;
+        top: 140px !important;
+        right: 16px !important;
+        bottom: auto !important;
+    }
 }
 
 /* ========== Safety Modal ========== */
@@ -916,6 +928,8 @@ header {
 /* Mobile phone display below logo */
 .mobile-logo-phone {
     display: none;
+    position: relative;
+    z-index: 1 !important;
 }
 
 .emergency-link {
